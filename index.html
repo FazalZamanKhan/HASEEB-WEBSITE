@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HASEEB CABLES - Premium Wire & Cable Manufacturer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/jpeg" href="HASEEB-LOGO.jpeg">
+</head>
+<body>
+    <!-- Navigation -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="logo">
+                <img src="HASEEB-LOGO.jpeg" alt="Haseeb Cables Logo" class="logo-img">
+                <h1>HASEEB<span>CABLES</span></h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#process">Process</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-cta">
+                <button class="dark-mode-toggle" id="darkModeToggle" title="Toggle Dark Mode">
+                    <i class="fas fa-lightbulb"></i>
+                </button>
+                <a href="#contact" class="btn btn-primary">Get a Quote</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <video class="hero-video" autoplay muted loop playsinline id="heroVideo">
+            <source src="hero-video.mp4" type="video/mp4">
+        </video>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">Premium Quality <span>Wires & Cables</span></h1>
+            <p class="hero-subtitle">Leading manufacturer and wholesaler of high-quality electrical wires and cables. Powering industries and homes with excellence since decades.</p>
+            <div class="hero-buttons">
+                <a href="#products" class="btn btn-primary">Our Products</a>
+                <a href="#contact" class="btn btn-secondary">Request Quote</a>
+            </div>
+        </div>
+        <div class="hero-stats">
+            <div class="stat-item">
+                <h3>20+</h3>
+                <p>Years Experience</p>
+            </div>
+            <div class="stat-item">
+                <h3>1000+</h3>
+                <p>Happy Clients</p>
+            </div>
+            <div class="stat-item">
+                <h3>50+</h3>
+                <p>Product Types</p>
+            </div>
+            <div class="stat-item">
+                <h3>100%</h3>
+                <p>Quality Assured</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600" alt="Cable Manufacturing">
+                    <div class="experience-badge">
+                        <h3>20+</h3>
+                        <p>Years of Excellence</p>
+                    </div>
+                </div>
+                <div class="about-content">
+                    <span class="section-tag">About Us</span>
+                    <h2 class="section-title">Your Trusted Wire & Cable Partner</h2>
+                    <p class="about-text">HASEEB CABLES is a leading manufacturer and wholesaler of premium quality electrical wires and cables. With decades of experience, we provide reliable power transmission solutions for residential, commercial, and industrial applications. Our commitment to quality and customer satisfaction has made us a preferred choice for contractors, electricians, and businesses across the region.</p>
+                    <div class="about-features">
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>ISI Certified Products</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Fire Resistant Cables</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Wholesale Prices</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Bulk Orders Welcome</span>
+                        </div>
+                    </div>
+                    <a href="#contact" class="btn btn-primary">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Our Products</span>
+                <h2 class="section-title">Premium Wire & Cable Range</h2>
+                <p class="section-subtitle">High-quality cables for every electrical need - residential, commercial & industrial</p>
+            </div>
+            
+            <!-- Product Categories -->
+            <div class="product-categories">
+                <button class="category-btn active" data-category="all">All Products</button>
+                <button class="category-btn" data-category="house">House Wiring</button>
+                <button class="category-btn" data-category="industrial">Industrial Cables</button>
+                <button class="category-btn" data-category="flexible">Flexible Wires</button>
+                <button class="category-btn" data-category="armoured">Armoured Cables</button>
+            </div>
+            
+            <!-- Products Grid -->
+            <div class="products-grid">
+                <div class="product-card" data-category="house">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400" alt="House Wiring Cable">
+                        <span class="product-badge">Best Seller</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>House Wiring Cables</h3>
+                        <p>PVC insulated copper conductor cables for residential wiring. Available in 1.0, 1.5, 2.5, 4.0 sq mm.</p>
+                        <div class="product-features">
+                            <span><i class="fas fa-check"></i> ISI Certified</span>
+                            <span><i class="fas fa-check"></i> Fire Retardant</span>
+                        </div>
+                        <a href="#contact" class="btn btn-primary btn-sm">Get Quote</a>
+                    </div>
+                </div>
+                
+                <div class="product-card" data-category="flexible">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=400" alt="Flexible Wire">
+                        <span class="product-badge">Popular</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Flexible Copper Wires</h3>
+                        <p>Multi-strand flexible copper wires ideal for appliances and extensions. High conductivity guaranteed.</p>
+                        <div class="product-features">
+                            <span><i class="fas fa-check"></i> 99.9% Pure Copper</span>
+                            <span><i class="fas fa-check"></i> Flexible Design</span>
+                        </div>
+                        <a href="#contact" class="btn btn-primary btn-sm">Get Quote</a>
+                    </div>
+                </div>
+                
+                <div class="product-card" data-category="industrial">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?w=400" alt="Industrial Cable">
+                    </div>
+                    <div class="product-info">
+                        <h3>Industrial Power Cables</h3>
+                        <p>Heavy-duty power cables for industrial machinery and high-load applications. 6 to 400 sq mm available.</p>
+                        <div class="product-features">
+                            <span><i class="fas fa-check"></i> High Load Capacity</span>
+                            <span><i class="fas fa-check"></i> Heat Resistant</span>
+                        </div>
+                        <a href="#contact" class="btn btn-primary btn-sm">Get Quote</a>
+                    </div>
+                </div>
+                
+                <div class="product-card" data-category="armoured">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebb6122?w=400" alt="Armoured Cable">
+                    </div>
+                    <div class="product-info">
+                        <h3>Armoured Cables</h3>
+                        <p>Steel wire armoured cables for underground and outdoor installations. Maximum protection guaranteed.</p>
+                        <div class="product-features">
+                            <span><i class="fas fa-check"></i> Underground Safe</span>
+                            <span><i class="fas fa-check"></i> Weather Proof</span>
+                        </div>
+                        <a href="#contact" class="btn btn-primary btn-sm">Get Quote</a>
+                    </div>
+                </div>
+                
+                <div class="product-card" data-category="house">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400" alt="Submersible Cable">
+                    </div>
+                    <div class="product-info">
+                        <h3>Submersible Pump Cables</h3>
+                        <p>Waterproof cables designed for submersible pumps and bore wells. 3 & 4 core options available.</p>
+                        <div class="product-features">
+                            <span><i class="fas fa-check"></i> Waterproof</span>
+                            <span><i class="fas fa-check"></i> Durable</span>
+                        </div>
+                        <a href="#contact" class="btn btn-primary btn-sm">Get Quote</a>
+                    </div>
+                </div>
+                
+                <div class="product-card" data-category="flexible">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400" alt="Speaker Wire">
+                    </div>
+                    <div class="product-info">
+                        <h3>Speaker & Audio Cables</h3>
+                        <p>High-quality speaker wires and audio cables for clear sound transmission. Multiple gauges available.</p>
+                        <div class="product-features">
+                            <span><i class="fas fa-check"></i> Low Resistance</span>
+                            <span><i class="fas fa-check"></i> Clear Signal</span>
+                        </div>
+                        <a href="#contact" class="btn btn-primary btn-sm">Get Quote</a>
+                    </div>
+                </div>
+                
+                <div class="product-card" data-category="industrial">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=400" alt="Control Cable">
+                    </div>
+                    <div class="product-info">
+                        <h3>Control Cables</h3>
+                        <p>Multi-core control cables for automation and instrumentation. PVC/XLPE insulated options.</p>
+                        <div class="product-features">
+                            <span><i class="fas fa-check"></i> Multi-Core</span>
+                            <span><i class="fas fa-check"></i> Shielded</span>
+                        </div>
+                        <a href="#contact" class="btn btn-primary btn-sm">Get Quote</a>
+                    </div>
+                </div>
+                
+                <div class="product-card" data-category="armoured">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?w=400" alt="XLPE Cable">
+                    </div>
+                    <div class="product-info">
+                        <h3>XLPE Insulated Cables</h3>
+                        <p>Cross-linked polyethylene cables for high voltage applications. Superior thermal properties.</p>
+                        <div class="product-features">
+                            <span><i class="fas fa-check"></i> High Voltage</span>
+                            <span><i class="fas fa-check"></i> XLPE Insulated</span>
+                        </div>
+                        <a href="#contact" class="btn btn-primary btn-sm">Get Quote</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">What We Offer</span>
+                <h2 class="section-title">Our Services</h2>
+                <p class="section-subtitle">Complete wire and cable solutions for all your electrical needs</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-industry"></i>
+                    </div>
+                    <h3>Manufacturing</h3>
+                    <p>State-of-the-art manufacturing facility producing high-quality wires and cables with strict quality control.</p>
+                    <a href="#contact" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-boxes"></i>
+                    </div>
+                    <h3>Wholesale Supply</h3>
+                    <p>Bulk orders at competitive wholesale prices for distributors, contractors, and retailers across the region.</p>
+                    <a href="#contact" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-cut"></i>
+                    </div>
+                    <h3>Custom Lengths</h3>
+                    <p>Cut-to-length services available. Get exactly the amount you need without wastage or excess inventory.</p>
+                    <a href="#contact" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <h3>Fast Delivery</h3>
+                    <p>Quick dispatch and delivery services across the region. Reliable logistics for your urgent requirements.</p>
+                    <a href="#contact" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>Technical Support</h3>
+                    <p>Expert guidance on cable selection, sizing, and specifications for your specific applications.</p>
+                    <a href="#contact" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3>Quality Assurance</h3>
+                    <p>All products tested and certified to meet ISI standards. Quality guaranteed on every meter of cable.</p>
+                    <a href="#contact" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="process" class="process">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">How To Order</span>
+                <h2 class="section-title">Easy Ordering Process</h2>
+                <p class="section-subtitle">Simple steps to get quality cables delivered to your doorstep</p>
+            </div>
+            <div class="process-timeline">
+                <div class="process-step">
+                    <div class="step-number">01</div>
+                    <div class="step-content">
+                        <h3>Inquiry</h3>
+                        <p>Contact us with your cable requirements - type, size, quantity. Our team will assist you in selecting the right products.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">02</div>
+                    <div class="step-content">
+                        <h3>Quotation</h3>
+                        <p>Receive competitive pricing based on your order quantity. Special wholesale rates for bulk orders.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">03</div>
+                    <div class="step-content">
+                        <h3>Order Confirmation</h3>
+                        <p>Confirm your order with advance payment. We prepare your cables with quality checks at every stage.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">04</div>
+                    <div class="step-content">
+                        <h3>Fast Delivery</h3>
+                        <p>Your order is dispatched promptly. Track shipment and receive quality cables at your location.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="why-choose-us">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Why Choose Us</span>
+                <h2 class="section-title">HASEEB CABLES Advantage</h2>
+                <p class="section-subtitle">What makes us the preferred choice for wire and cable solutions</p>
+            </div>
+            <div class="advantages-grid">
+                <div class="advantage-card">
+                    <div class="advantage-icon">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <h3>Premium Quality</h3>
+                    <p>99.9% pure copper conductors with high-grade PVC/XLPE insulation for maximum conductivity and safety.</p>
+                </div>
+                <div class="advantage-card">
+                    <div class="advantage-icon">
+                        <i class="fas fa-tags"></i>
+                    </div>
+                    <h3>Competitive Pricing</h3>
+                    <p>Direct from manufacturer pricing. No middlemen means better rates for you, especially on bulk orders.</p>
+                </div>
+                <div class="advantage-card">
+                    <div class="advantage-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>ISI Certified</h3>
+                    <p>All products meet Bureau of Indian Standards specifications. Quality you can trust for every installation.</p>
+                </div>
+                <div class="advantage-card">
+                    <div class="advantage-icon">
+                        <i class="fas fa-fire-extinguisher"></i>
+                    </div>
+                    <h3>Fire Retardant</h3>
+                    <p>FR and FRLS grade cables available for enhanced safety in residential and commercial buildings.</p>
+                </div>
+                <div class="advantage-card">
+                    <div class="advantage-icon">
+                        <i class="fas fa-warehouse"></i>
+                    </div>
+                    <h3>Ready Stock</h3>
+                    <p>Large inventory of all popular sizes and types. Quick dispatch for urgent requirements.</p>
+                </div>
+                <div class="advantage-card">
+                    <div class="advantage-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Trusted Partner</h3>
+                    <p>Serving contractors, electricians, and businesses for over 20 years with reliability and trust.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Testimonials</span>
+                <h2 class="section-title">What Our Clients Say</h2>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"We've been sourcing cables from Haseeb Cables for 5 years now. Consistent quality, competitive prices, and reliable delivery. Highly recommended for contractors!"</p>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=100" alt="Client">
+                        <div>
+                            <h4>Rajesh Kumar</h4>
+                            <span>Electrical Contractor</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"As a distributor, I need quality products at wholesale rates. Haseeb Cables delivers both. Their ISI certified cables give my customers confidence in what they're buying."</p>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100" alt="Client">
+                        <div>
+                            <h4>Mohammed Ali</h4>
+                            <span>Wholesale Distributor</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"Used their industrial cables for our factory expansion. Excellent quality, proper gauge, and the technical team helped us select the right cables for our machinery."</p>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=100" alt="Client">
+                        <div>
+                            <h4>Priya Sharma</h4>
+                            <span>Factory Owner</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="cta-overlay"></div>
+        <div class="container">
+            <div class="cta-content">
+                <h2>Need Quality Cables at Wholesale Prices?</h2>
+                <p>Contact us today for competitive quotes on all types of wires and cables. Bulk orders get special discounts!</p>
+                <div class="cta-buttons">
+                    <a href="#contact" class="btn btn-primary">Get a Free Quote</a>
+                    <a href="tel:+919876543210" class="btn btn-outline"><i class="fas fa-phone"></i> Call Us Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <span class="section-tag">Get In Touch</span>
+                    <h2 class="section-title">Contact Us</h2>
+                    <p>Need cables for your project? Contact us for the best wholesale prices and quick delivery. We're here to help!</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Factory & Office</h4>
+                                <p>Industrial Area, Sector 5<br>Your City, State - 123456</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone-alt"></i>
+                            <div>
+                                <h4>Phone / WhatsApp</h4>
+                                <p>+91 98765 43210<br>+91 12345 67890</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <p>info@haseebcables.com<br>sales@haseebcables.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h4>Business Hours</h4>
+                                <p>Mon - Sat: 9:00 AM - 7:00 PM<br>Sunday: Closed</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form-wrapper">
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder="Your Name / Company Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" id="phone" name="phone" placeholder="Phone / WhatsApp Number" required>
+                        </div>
+                        <div class="form-group">
+                            <select id="service" name="service">
+                                <option value="">Select Product Category</option>
+                                <option value="house-wiring">House Wiring Cables</option>
+                                <option value="flexible">Flexible Wires</option>
+                                <option value="industrial">Industrial Power Cables</option>
+                                <option value="armoured">Armoured Cables</option>
+                                <option value="submersible">Submersible Cables</option>
+                                <option value="control">Control Cables</option>
+                                <option value="bulk">Bulk/Wholesale Order</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" placeholder="Please mention: Cable type, size (sq mm), quantity required, delivery location..." rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">Request Quote</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <div class="footer-logo-wrapper">
+                        <img src="HASEEB-LOGO.jpeg" alt="Haseeb Cables" class="footer-logo-img">
+                        <h3 class="footer-logo">HASEEB<span>CABLES</span></h3>
+                    </div>
+                    <p>Your trusted partner for premium quality wires and cables. Manufacturing and wholesale supply of electrical cables for residential, commercial, and industrial applications.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Products</h4>
+                    <ul>
+                        <li><a href="#products">House Wiring Cables</a></li>
+                        <li><a href="#products">Flexible Wires</a></li>
+                        <li><a href="#products">Industrial Cables</a></li>
+                        <li><a href="#products">Armoured Cables</a></li>
+                        <li><a href="#products">Submersible Cables</a></li>
+                    </ul>
+                </div>
+                <div class="footer-newsletter">
+                    <h4>Get Updates</h4>
+                    <p>Subscribe to receive price updates and new product announcements.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Enter your email">
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                    <div class="footer-contact-quick">
+                        <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+                        <p><i class="fab fa-whatsapp"></i> +91 98765 43210</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Haseeb Cables. All Rights Reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
