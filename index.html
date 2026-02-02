@@ -7,14 +7,14 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="icon" type="image/jpeg" href="HASEEB-LOGO.jpeg">
+    <link rel="icon" type="image/png" href="haseeb-logo.png">
 </head>
 <body>
     <!-- Navigation -->
     <header class="header">
         <nav class="navbar">
             <div class="logo">
-                <img src="HASEEB-LOGO.jpeg" alt="Haseeb Cables Logo" class="logo-img">
+                <img src="haseeb-logo.png" alt="Haseeb Cables Logo" class="logo-img">
                 <h1>HASEEB<span>CABLES</span></h1>
             </div>
             <ul class="nav-links">
@@ -53,22 +53,28 @@
                 <a href="#contact" class="btn btn-secondary">Request Quote</a>
             </div>
         </div>
-        <div class="hero-stats">
-            <div class="stat-item">
-                <h3>20+</h3>
-                <p>Years Experience</p>
-            </div>
-            <div class="stat-item">
-                <h3>1000+</h3>
-                <p>Happy Clients</p>
-            </div>
-            <div class="stat-item">
-                <h3>50+</h3>
-                <p>Product Types</p>
-            </div>
-            <div class="stat-item">
-                <h3>100%</h3>
-                <p>Quality Assured</p>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>20+</h3>
+                    <p>Years Experience</p>
+                </div>
+                <div class="stat-item">
+                    <h3>1000+</h3>
+                    <p>Happy Clients</p>
+                </div>
+                <div class="stat-item">
+                    <h3>50+</h3>
+                    <p>Product Types</p>
+                </div>
+                <div class="stat-item">
+                    <h3>100%</h3>
+                    <p>Quality Assured</p>
+                </div>
             </div>
         </div>
     </section>
@@ -105,6 +111,22 @@
                             <i class="fas fa-check-circle"></i>
                             <span>Bulk Orders Welcome</span>
                         </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Copper & Aluminum Conductors</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Nationwide Delivery</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Custom Cable Solutions</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>10+ Years Warranty</span>
+                        </div>
                     </div>
                     <a href="#contact" class="btn btn-primary">Contact Us</a>
                 </div>
@@ -115,19 +137,21 @@
     <!-- Products Section -->
     <section id="products" class="products">
         <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Our Products</span>
-                <h2 class="section-title">Premium Wire & Cable Range</h2>
-                <p class="section-subtitle">High-quality cables for every electrical need - residential, commercial & industrial</p>
-            </div>
-            
-            <!-- Product Categories -->
-            <div class="product-categories">
-                <button class="category-btn active" data-category="all">All Products</button>
-                <button class="category-btn" data-category="house">House Wiring</button>
-                <button class="category-btn" data-category="industrial">Industrial Cables</button>
-                <button class="category-btn" data-category="flexible">Flexible Wires</button>
-                <button class="category-btn" data-category="armoured">Armoured Cables</button>
+            <div class="products-header-wrapper">
+                <div class="section-header products-section-header">
+                    <span class="section-tag">Our Products</span>
+                    <h2 class="section-title">Premium Wire & Cable Range</h2>
+                    <p class="section-subtitle">High-quality cables for every electrical need - residential, commercial & industrial</p>
+                </div>
+                
+                <!-- Product Categories -->
+                <div class="product-categories">
+                    <button class="category-btn active" data-category="all">All Products</button>
+                    <button class="category-btn" data-category="house">House Wiring</button>
+                    <button class="category-btn" data-category="industrial">Industrial Cables</button>
+                    <button class="category-btn" data-category="flexible">Flexible Wires</button>
+                    <button class="category-btn" data-category="armoured">Armoured Cables</button>
+                </div>
             </div>
             
             <!-- Products Grid -->
@@ -320,6 +344,10 @@
 
     <!-- Process Section -->
     <section id="process" class="process">
+        <video class="process-video" autoplay muted loop playsinline>
+            <source src="video2.mp4" type="video/mp4">
+        </video>
+        <div class="process-overlay"></div>
         <div class="container">
             <div class="section-header">
                 <span class="section-tag">How To Order</span>
@@ -577,7 +605,7 @@
             <div class="footer-grid">
                 <div class="footer-about">
                     <div class="footer-logo-wrapper">
-                        <img src="HASEEB-LOGO.jpeg" alt="Haseeb Cables" class="footer-logo-img">
+                        <img src="haseeb-logo.png" alt="Haseeb Cables" class="footer-logo-img">
                         <h3 class="footer-logo">HASEEB<span>CABLES</span></h3>
                     </div>
                     <p>Your trusted partner for premium quality wires and cables. Manufacturing and wholesale supply of electrical cables for residential, commercial, and industrial applications.</p>
