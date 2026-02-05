@@ -23,13 +23,13 @@
                 <li><a href="#products">Products</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#process">Process</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#contact" class="nav-red">Contact</a></li>
             </ul>
             <div class="nav-cta">
                 <button class="dark-mode-toggle" id="darkModeToggle" title="Toggle Dark Mode">
                     <i class="fas fa-lightbulb"></i>
                 </button>
-                <a href="#contact" class="btn btn-primary">Get a Quote</a>
+                <a href="#contact" class="btn btn-red">Get a Quote</a>
             </div>
             <div class="hamburger">
                 <span></span>
@@ -50,7 +50,7 @@
             <p class="hero-subtitle">Leading manufacturer and wholesaler of high-quality electrical wires and cables. Powering industries and homes with excellence since decades.</p>
             <div class="hero-buttons">
                 <a href="#products" class="btn btn-primary">Our Products</a>
-                <a href="#contact" class="btn btn-secondary">Request Quote</a>
+                <a href="#contact" class="btn btn-red">Request Quote</a>
             </div>
         </div>
     </section>
@@ -128,7 +128,7 @@
                             <span>10+ Years Warranty</span>
                         </div>
                     </div>
-                    <a href="#contact" class="btn btn-primary">Contact Us</a>
+                    <a href="#contact" class="btn btn-red">Contact Us</a>
                 </div>
             </div>
         </div>
@@ -147,132 +147,286 @@
                 <!-- Product Categories -->
                 <div class="product-categories">
                     <button class="category-btn active" data-category="all">All Products</button>
-                    <button class="category-btn" data-category="house">House Wiring</button>
-                    <button class="category-btn" data-category="industrial">Industrial Cables</button>
-                    <button class="category-btn" data-category="flexible">Flexible Wires</button>
-                    <button class="category-btn" data-category="armoured">Armoured Cables</button>
+                    <button class="category-btn" data-category="copper">Copper Wires</button>
+                    <button class="category-btn" data-category="silver">Silver Cables</button>
+                    <button class="category-btn" data-category="flexible">Flexible Cables</button>
                 </div>
             </div>
             
             <!-- Products Grid -->
             <div class="products-grid">
-                <div class="product-card" data-category="house">
+                <!-- COPPER WIRES - HASEEB CABLE -->
+                <div class="product-card" data-category="copper">
                     <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400" alt="House Wiring Cable">
+                        <img src="pictures/copper1.png" alt="Haseeb Copper Wire 3/29">
                         <span class="product-badge">Best Seller</span>
                     </div>
                     <div class="product-info">
-                        <h3>House Wiring Cables</h3>
-                        <p>PVC insulated copper conductor cables for residential wiring. Available in 1.0, 1.5, 2.5, 4.0 sq mm.</p>
+                        <h3>Haseeb Copper Wire - 3/29</h3>
+                        <p>Premium quality copper wire for residential and commercial wiring applications.</p>
                         <div class="product-features">
+                            <span><i class="fas fa-check"></i> 99.9% Pure Copper</span>
                             <span><i class="fas fa-check"></i> ISI Certified</span>
+                        </div>
+                        <a href="#contact" class="btn btn-primary btn-sm">Get Quote</a>
+                    </div>
+                </div>
+                
+                <div class="product-card" data-category="copper">
+                    <div class="product-image">
+                        <img src="pictures/copper2.png" alt="Haseeb Copper Wire 7/29">
+                        <span class="product-badge">Popular</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Haseeb Copper Wire - 7/29</h3>
+                        <p>Multi-strand copper wire offering excellent conductivity for heavy-duty applications.</p>
+                        <div class="product-features">
+                            <span><i class="fas fa-check"></i> High Conductivity</span>
                             <span><i class="fas fa-check"></i> Fire Retardant</span>
                         </div>
                         <a href="#contact" class="btn btn-primary btn-sm">Get Quote</a>
                     </div>
                 </div>
                 
-                <div class="product-card" data-category="flexible">
+                <div class="product-card" data-category="copper">
                     <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=400" alt="Flexible Wire">
-                        <span class="product-badge">Popular</span>
+                        <img src="pictures/copper3.png" alt="Haseeb Copper Wire 7/36">
                     </div>
                     <div class="product-info">
-                        <h3>Flexible Copper Wires</h3>
-                        <p>Multi-strand flexible copper wires ideal for appliances and extensions. High conductivity guaranteed.</p>
+                        <h3>Haseeb Copper Wire - 7/36</h3>
+                        <p>Premium grade copper wire designed for superior electrical performance.</p>
                         <div class="product-features">
-                            <span><i class="fas fa-check"></i> 99.9% Pure Copper</span>
-                            <span><i class="fas fa-check"></i> Flexible Design</span>
-                        </div>
-                        <a href="#contact" class="btn btn-primary btn-sm">Get Quote</a>
-                    </div>
-                </div>
-                
-                <div class="product-card" data-category="industrial">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?w=400" alt="Industrial Cable">
-                    </div>
-                    <div class="product-info">
-                        <h3>Industrial Power Cables</h3>
-                        <p>Heavy-duty power cables for industrial machinery and high-load applications. 6 to 400 sq mm available.</p>
-                        <div class="product-features">
-                            <span><i class="fas fa-check"></i> High Load Capacity</span>
-                            <span><i class="fas fa-check"></i> Heat Resistant</span>
-                        </div>
-                        <a href="#contact" class="btn btn-primary btn-sm">Get Quote</a>
-                    </div>
-                </div>
-                
-                <div class="product-card" data-category="armoured">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebb6122?w=400" alt="Armoured Cable">
-                    </div>
-                    <div class="product-info">
-                        <h3>Armoured Cables</h3>
-                        <p>Steel wire armoured cables for underground and outdoor installations. Maximum protection guaranteed.</p>
-                        <div class="product-features">
-                            <span><i class="fas fa-check"></i> Underground Safe</span>
-                            <span><i class="fas fa-check"></i> Weather Proof</span>
-                        </div>
-                        <a href="#contact" class="btn btn-primary btn-sm">Get Quote</a>
-                    </div>
-                </div>
-                
-                <div class="product-card" data-category="house">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400" alt="Submersible Cable">
-                    </div>
-                    <div class="product-info">
-                        <h3>Submersible Pump Cables</h3>
-                        <p>Waterproof cables designed for submersible pumps and bore wells. 3 & 4 core options available.</p>
-                        <div class="product-features">
-                            <span><i class="fas fa-check"></i> Waterproof</span>
+                            <span><i class="fas fa-check"></i> Premium Quality</span>
                             <span><i class="fas fa-check"></i> Durable</span>
                         </div>
                         <a href="#contact" class="btn btn-primary btn-sm">Get Quote</a>
                     </div>
                 </div>
                 
+                <div class="product-card" data-category="copper">
+                    <div class="product-image">
+                        <img src="pictures/copper4.png" alt="Haseeb Copper Wire 7/44">
+                    </div>
+                    <div class="product-info">
+                        <h3>Haseeb Copper Wire - 7/44</h3>
+                        <p>Heavy-duty copper wire for industrial and high-load electrical applications.</p>
+                        <div class="product-features">
+                            <span><i class="fas fa-check"></i> Heavy Duty</span>
+                            <span><i class="fas fa-check"></i> Heat Resistant</span>
+                        </div>
+                        <a href="#contact" class="btn btn-primary btn-sm">Get Quote</a>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="copper">
+                    <div class="product-image">
+                        <img src="pictures/copper5.png" alt="Haseeb Copper Wire 7/52">
+                    </div>
+                    <div class="product-info">
+                        <h3>Haseeb Copper Wire - 7/52</h3>
+                        <p>Extra thick copper wire for maximum power transmission in demanding environments.</p>
+                        <div class="product-features">
+                            <span><i class="fas fa-check"></i> Maximum Power</span>
+                            <span><i class="fas fa-check"></i> Industrial Grade</span>
+                        </div>
+                        <a href="#contact" class="btn btn-primary btn-sm">Get Quote</a>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="copper">
+                    <div class="product-image">
+                        <img src="pictures/copper6.png" alt="Haseeb Copper Wire 7/64">
+                    </div>
+                    <div class="product-info">
+                        <h3>Haseeb Copper Wire - 7/64</h3>
+                        <p>Our thickest copper wire for the most demanding industrial power requirements.</p>
+                        <div class="product-features">
+                            <span><i class="fas fa-check"></i> Extra Heavy Duty</span>
+                            <span><i class="fas fa-check"></i> Premium Grade</span>
+                        </div>
+                        <a href="#contact" class="btn btn-primary btn-sm">Get Quote</a>
+                    </div>
+                </div>
+
+                <!-- SILVER CABLES -->
+                <div class="product-card" data-category="silver">
+                    <div class="product-image">
+                        <img src="pictures/silver1.png" alt="Silver Cable 7/52">
+                        <span class="product-badge">Premium</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Silver Cable - 7/52</h3>
+                        <p>High-quality silver plated cable for superior conductivity and durability.</p>
+                        <div class="product-features">
+                            <span><i class="fas fa-check"></i> Silver Plated</span>
+                            <span><i class="fas fa-check"></i> High Conductivity</span>
+                        </div>
+                        <a href="#contact" class="btn btn-primary btn-sm">Get Quote</a>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="silver">
+                    <div class="product-image">
+                        <img src="pictures/silver2.png" alt="Silver Cable 7/64">
+                    </div>
+                    <div class="product-info">
+                        <h3>Silver Cable - 7/64</h3>
+                        <p>Premium silver plated cable designed for demanding electrical applications.</p>
+                        <div class="product-features">
+                            <span><i class="fas fa-check"></i> Premium Quality</span>
+                            <span><i class="fas fa-check"></i> Durable</span>
+                        </div>
+                        <a href="#contact" class="btn btn-primary btn-sm">Get Quote</a>
+                    </div>
+                </div>
+
+                <!-- FLEXIBLE CABLES -->
                 <div class="product-card" data-category="flexible">
                     <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400" alt="Speaker Wire">
+                        <img src="pictures/Flexible1.png" alt="Flexible Cable 23/76">
+                        <span class="product-badge">Popular</span>
                     </div>
                     <div class="product-info">
-                        <h3>Speaker & Audio Cables</h3>
-                        <p>High-quality speaker wires and audio cables for clear sound transmission. Multiple gauges available.</p>
+                        <h3>Flexible Cable - 23/76 (0.5mm)</h3>
+                        <p>Multi-strand flexible cable ideal for appliances. Available in Single Core.</p>
                         <div class="product-features">
-                            <span><i class="fas fa-check"></i> Low Resistance</span>
-                            <span><i class="fas fa-check"></i> Clear Signal</span>
+                            <span><i class="fas fa-check"></i> Single & Two Core</span>
+                            <span><i class="fas fa-check"></i> Flexible Design</span>
                         </div>
                         <a href="#contact" class="btn btn-primary btn-sm">Get Quote</a>
                     </div>
                 </div>
-                
-                <div class="product-card" data-category="industrial">
+
+                <div class="product-card" data-category="flexible">
                     <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=400" alt="Control Cable">
+                        <img src="pictures/Flexible2.png" alt="Flexible Cable 40/76">
                     </div>
                     <div class="product-info">
-                        <h3>Control Cables</h3>
-                        <p>Multi-core control cables for automation and instrumentation. PVC/XLPE insulated options.</p>
+                        <h3>Flexible Cable - 40/76 (1mm)</h3>
+                        <p>Versatile flexible cable for various electrical connections. Single & Two Core available.</p>
                         <div class="product-features">
-                            <span><i class="fas fa-check"></i> Multi-Core</span>
-                            <span><i class="fas fa-check"></i> Shielded</span>
+                            <span><i class="fas fa-check"></i> Single & Two Core</span>
+                            <span><i class="fas fa-check"></i> High Quality</span>
                         </div>
                         <a href="#contact" class="btn btn-primary btn-sm">Get Quote</a>
                     </div>
                 </div>
-                
-                <div class="product-card" data-category="armoured">
+
+                <div class="product-card" data-category="flexible">
                     <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?w=400" alt="XLPE Cable">
+                        <img src="pictures/Flexible3.png" alt="Flexible Cable 70/76">
                     </div>
                     <div class="product-info">
-                        <h3>XLPE Insulated Cables</h3>
-                        <p>Cross-linked polyethylene cables for high voltage applications. Superior thermal properties.</p>
+                        <h3>Flexible Cable - 70/76 (1.5mm)</h3>
+                        <p>Medium duty flexible cable perfect for household and commercial use.</p>
                         <div class="product-features">
-                            <span><i class="fas fa-check"></i> High Voltage</span>
-                            <span><i class="fas fa-check"></i> XLPE Insulated</span>
+                            <span><i class="fas fa-check"></i> Single & Two Core</span>
+                            <span><i class="fas fa-check"></i> Fire Retardant</span>
+                        </div>
+                        <a href="#contact" class="btn btn-primary btn-sm">Get Quote</a>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="flexible">
+                    <div class="product-image">
+                        <img src="pictures/Flexible4.png" alt="Flexible Cable 110/76">
+                    </div>
+                    <div class="product-info">
+                        <h3>Flexible Cable - 110/76 (2.5mm)</h3>
+                        <p>Heavy-duty flexible cable for high power applications. Single & Two Core.</p>
+                        <div class="product-features">
+                            <span><i class="fas fa-check"></i> Single & Two Core</span>
+                            <span><i class="fas fa-check"></i> Heavy Duty</span>
+                        </div>
+                        <a href="#contact" class="btn btn-primary btn-sm">Get Quote</a>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="flexible">
+                    <div class="product-image">
+                        <img src="pictures/Flexible5.png" alt="Flexible Cable 4mm">
+                    </div>
+                    <div class="product-info">
+                        <h3>Flexible Cable - 4mm</h3>
+                        <p>Premium 4mm flexible cable for demanding power requirements.</p>
+                        <div class="product-features">
+                            <span><i class="fas fa-check"></i> Single Core</span>
+                            <span><i class="fas fa-check"></i> High Capacity</span>
+                        </div>
+                        <a href="#contact" class="btn btn-primary btn-sm">Get Quote</a>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="flexible">
+                    <div class="product-image">
+                        <img src="pictures/Flexible6.png" alt="Flexible Cable 6mm">
+                    </div>
+                    <div class="product-info">
+                        <h3>Flexible Cable - 6mm</h3>
+                        <p>Industrial grade 6mm flexible cable for heavy electrical loads.</p>
+                        <div class="product-features">
+                            <span><i class="fas fa-check"></i> Single Core</span>
+                            <span><i class="fas fa-check"></i> Industrial Grade</span>
+                        </div>
+                        <a href="#contact" class="btn btn-primary btn-sm">Get Quote</a>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="flexible">
+                    <div class="product-image">
+                        <img src="pictures/Flexible7.png" alt="Flexible Cable 8mm">
+                    </div>
+                    <div class="product-info">
+                        <h3>Flexible Cable - 8mm</h3>
+                        <p>Heavy-duty 8mm flexible cable for maximum power transmission.</p>
+                        <div class="product-features">
+                            <span><i class="fas fa-check"></i> Single Core</span>
+                            <span><i class="fas fa-check"></i> Maximum Power</span>
+                        </div>
+                        <a href="#contact" class="btn btn-primary btn-sm">Get Quote</a>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="flexible">
+                    <div class="product-image">
+                        <img src="pictures/Flexible8.png" alt="Flexible Cable 10mm">
+                    </div>
+                    <div class="product-info">
+                        <h3>Flexible Cable - 10mm</h3>
+                        <p>Extra heavy-duty 10mm flexible cable for industrial applications.</p>
+                        <div class="product-features">
+                            <span><i class="fas fa-check"></i> Single Core</span>
+                            <span><i class="fas fa-check"></i> Extra Heavy Duty</span>
+                        </div>
+                        <a href="#contact" class="btn btn-primary btn-sm">Get Quote</a>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="flexible">
+                    <div class="product-image">
+                        <img src="pictures/Flexible9.png" alt="Flexible Cable 16mm">
+                    </div>
+                    <div class="product-info">
+                        <h3>Flexible Cable - 16mm</h3>
+                        <p>Professional grade 16mm flexible cable for commercial installations.</p>
+                        <div class="product-features">
+                            <span><i class="fas fa-check"></i> Single Core</span>
+                            <span><i class="fas fa-check"></i> Professional Grade</span>
+                        </div>
+                        <a href="#contact" class="btn btn-primary btn-sm">Get Quote</a>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="flexible">
+                    <div class="product-image">
+                        <img src="pictures/Flexible10.png" alt="Flexible Cable 25mm">
+                    </div>
+                    <div class="product-info">
+                        <h3>Flexible Cable - 25mm</h3>
+                        <p>Our largest flexible cable for the most demanding industrial power needs.</p>
+                        <div class="product-features">
+                            <span><i class="fas fa-check"></i> Single Core</span>
+                            <span><i class="fas fa-check"></i> Maximum Capacity</span>
                         </div>
                         <a href="#contact" class="btn btn-primary btn-sm">Get Quote</a>
                     </div>
@@ -513,8 +667,8 @@
                 <h2>Need Quality Cables at Wholesale Prices?</h2>
                 <p>Contact us today for competitive quotes on all types of wires and cables. Bulk orders get special discounts!</p>
                 <div class="cta-buttons">
-                    <a href="#contact" class="btn btn-primary">Get a Free Quote</a>
-                    <a href="tel:+919876543210" class="btn btn-outline"><i class="fas fa-phone"></i> Call Us Now</a>
+                    <a href="#contact" class="btn btn-red">Get a Free Quote</a>
+                    <a href="tel:+919876543210" class="btn btn-red-outline"><i class="fas fa-phone"></i> Call Us Now</a>
                 </div>
             </div>
         </div>
@@ -592,7 +746,7 @@
                         <div class="form-group">
                             <textarea id="message" name="message" placeholder="Please mention: Cable type, size (sq mm), quantity required, delivery location..." rows="5" required></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary btn-full">Request Quote</button>
+                        <button type="submit" class="btn btn-red btn-full">Request Quote</button>
                     </form>
                 </div>
             </div>

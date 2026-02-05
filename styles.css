@@ -6,6 +6,8 @@
     --primary-light: #3CB371;        /* Medium sea green */
     --accent-color: #FFD700;         /* Golden Yellow */
     --accent-dark: #DAA520;          /* Goldenrod */
+    --red-color: #C41E3A;            /* Brand Red */
+    --red-dark: #9A1830;             /* Dark Red */
     --secondary-color: #1A3A2A;      /* Dark green-black */
     --dark-color: #0D1F15;           /* Very dark green */
     --light-color: #F0F8F0;          /* Light green tint */
@@ -273,6 +275,29 @@ img {
     color: var(--primary-color);
 }
 
+.btn-red {
+    background: #C41E3A !important;
+    color: #FFFFFF !important;
+    border: none;
+}
+
+.btn-red:hover {
+    background: #9A1830 !important;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.btn-red-outline {
+    background: #C41E3A !important;
+    color: #FFFFFF !important;
+    border: 2px solid #C41E3A;
+}
+
+.btn-red-outline:hover {
+    background: #9A1830 !important;
+    border-color: #9A1830;
+}
+
 .btn-full {
     width: 100%;
 }
@@ -407,6 +432,15 @@ img {
 .nav-links a:hover::after,
 .nav-links a.active::after {
     width: 100%;
+}
+
+.nav-links a.nav-red {
+    color: #C41E3A !important;
+    font-weight: 700;
+}
+
+.header.scrolled .nav-links a.nav-red {
+    color: #C41E3A !important;
 }
 
 .nav-cta {
