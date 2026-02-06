@@ -1,5 +1,48 @@
+.footer, .footer a, .footer p, .footer h2, .footer h3, .footer h4, .footer h5, .footer h6,
+.footer .footer-links a,
+.footer .footer-contact span,
+.footer .footer-contact a,
+.footer .footer-contact p,
+.footer .footer-subscribe,
+.footer .footer-subscribe input,
+.footer .footer-subscribe button,
+.footer .footer-phone,
+.footer .footer-phone a,
+.footer .footer-phone span,
+.footer .footer-phone p,
+.footer .footer-social a,
+.footer .footer-social span,
+.footer .footer-social p,
+.footer .footer-social h4,
+.footer .footer-social h5,
+.footer .footer-social h6,
+.nav-links a,
+.nav-links li,
+.nav-links span,
+.nav-links p,
+.nav-links h2,
+.nav-links h3,
+.nav-links h4,
+.nav-links h5,
+.nav-links h6,
+.about-content .section-title,
+.about-content .section-title,
+    color: var(--primary-green);
+    font-weight: 700;
+    filter: none;
+}
+.footer .footer-subscribe input {
+    background: #fff;
+    color: #222;
+    font-weight: 700;
+}
+.footer .footer-phone a {
+    color: #FFD700;
+    font-weight: 700;
+}
 /* ===== CSS VARIABLES ===== */
 :root {
+        --primary-green: #2E8B57;
     /* Green and Yellow color scheme from Haseeb Cables logo */
     --primary-color: #2E8B57;        /* Sea Green - Main brand color */
     --primary-dark: #1E6B47;         /* Darker green */
@@ -320,9 +363,10 @@ img {
 }
 
 .section-subtitle {
-    font-size: 18px;
-    color: var(--text-light);
-    max-width: 600px;
+    font-size: 20px;
+    color: var(--secondary-color);
+    max-width: 650px;
+    font-weight: 500;
 }
 
 .section-header {
@@ -352,6 +396,10 @@ img {
 
 .header.scrolled .logo h1 {
     color: var(--secondary-color);
+}
+
+.header.scrolled .logo h1 span {
+    color: var(--primary-color);
 }
 
 .header.scrolled .nav-links a {
@@ -506,7 +554,7 @@ img {
     position: relative;
     z-index: 2;
     text-align: left;
-    max-width: 900px;
+    max-width: 1400px;
     margin-left: 100px;
     margin-right: auto;
 }
@@ -517,6 +565,7 @@ img {
     color: var(--white);
     margin-bottom: 25px;
     line-height: 1.1;
+    white-space: nowrap;
 }
 
 .hero-title span {
@@ -526,9 +575,10 @@ img {
 .hero-subtitle {
     font-size: 24px;
     font-weight: 600;
-    color: var(--gray-200);
+    color: #ffffff;
     margin-bottom: 40px;
-    max-width: 700px;
+    max-width: 100%;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .hero-buttons {
@@ -583,17 +633,19 @@ img {
 }
 
 .stat-item h3 {
-    font-size: 48px;
+    font-size: 56px;
     font-weight: 800;
     color: var(--accent-color);
     margin-bottom: 5px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .stat-item p {
-    font-size: 14px;
-    color: var(--gray-200);
+    font-size: 16px;
+    color: #ffffff;
     text-transform: uppercase;
     letter-spacing: 1px;
+    font-weight: 500;
 }
 
 /* ===== ABOUT SECTION ===== */
@@ -652,9 +704,9 @@ img {
 .about-text {
     color: #1a1a1a;
     margin-bottom: 30px;
-    font-size: 17px;
+    font-size: 18px;
     font-weight: 400;
-    line-height: 1.7;
+    line-height: 1.8;
 }
 
 .about-features {
@@ -667,36 +719,60 @@ img {
 .feature-item {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
 }
 
 .feature-item i {
     color: var(--primary-color);
-    font-size: 18px;
+    font-size: 20px;
 }
 
 .feature-item span {
-    font-weight: 500;
+    font-weight: 600;
+    font-size: 16px;
 }
 
 /* ===== SERVICES SECTION ===== */
+/* Why Choose Us section yellow background */
+.why-choose-us {
+    background: var(--primary-green);
+}
+
+.why-choose-us .service-card {
+    background: var(--primary-green);
+    border-color: var(--primary-dark);
+}
+/* Make section title and subtitle white in services section */
+#services .section-title,
+#services .section-subtitle {
+    color: #fff;
+}
 .services {
-    padding: 120px 0;
-    background: var(--light-color);
+    padding: 120px 0 0 0;
+    background: var(--primary-green);
 }
 
 .services-carousel-wrapper {
     position: relative;
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 15px;
+    max-width: 100%;
+    margin: 0;
+    padding: 60px;
+    background: var(--primary-green);
+    margin-top: 50px;
 }
 
 .services-carousel {
-    display: flex;
-    gap: 30px;
     overflow: hidden;
-    width: 100%;
+    flex: 1;
+}
+
+.services-carousel-inner {
+    display: flex;
+    gap: 25px;
+    transition: transform 0.5s ease;
 }
 
 .carousel-arrow {
@@ -723,13 +799,12 @@ img {
 
 .service-card {
     position: relative;
-    min-width: calc(33.333% - 20px);
-    height: 350px;
+    flex: 0 0 calc((100% - 50px) / 3);
+    height: 520px;
     border-radius: var(--border-radius);
     overflow: hidden;
     box-shadow: var(--shadow-sm);
-    transition: var(--transition);
-    flex-shrink: 0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .service-card:hover {
@@ -773,7 +848,7 @@ img {
     bottom: 0;
     left: 0;
     right: 0;
-    padding: 25px;
+    padding: 30px;
     z-index: 2;
     display: flex;
     flex-direction: column;
@@ -781,7 +856,7 @@ img {
 }
 
 .service-info h3 {
-    font-size: 24px;
+    font-size: 26px;
     font-weight: 700;
     color: var(--white);
     margin-bottom: 15px;
@@ -824,6 +899,11 @@ img {
 .process .section-title,
 .process .section-subtitle {
     color: var(--white);
+}
+
+.process .section-subtitle {
+    font-size: 20px;
+    font-weight: 500;
 }
 
 .process .section-tag {
@@ -871,15 +951,19 @@ img {
 }
 
 .step-content h3 {
-    font-size: 20px;
+    font-size: 26px;
     color: var(--white);
     margin-bottom: 15px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .step-content p {
-    color: var(--gray-300);
-    font-size: 15px;
-    line-height: 1.7;
+    color: #ffffff;
+    font-size: 17px;
+    line-height: 1.8;
+    font-weight: 500;
 }
 
 .process-cta {
@@ -972,6 +1056,99 @@ img {
 .testimonials {
     padding: 120px 0;
     background: var(--light-color);
+    overflow: hidden;
+}
+
+.testimonials-marquee-wrapper {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.testimonials-marquee-wrapper::before,
+.testimonials-marquee-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 100px;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.testimonials-marquee-wrapper::before {
+    left: 0;
+    background: linear-gradient(to right, var(--light-color), transparent);
+}
+
+.testimonials-marquee-wrapper::after {
+    right: 0;
+    background: linear-gradient(to left, var(--light-color), transparent);
+}
+
+.testimonials-marquee {
+    display: flex;
+    gap: 30px;
+    width: max-content;
+    animation: scroll-testimonials 45s linear infinite;
+}
+
+.testimonials-marquee:hover {
+    animation-play-state: paused;
+}
+
+@keyframes scroll-testimonials {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.testimonial-item {
+    flex-shrink: 0;
+    width: 380px;
+    background: var(--white);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-sm);
+    border-left: 4px solid var(--primary-color);
+    display: inline-block;
+}
+
+.testimonial-item .testimonial-rating {
+    margin-bottom: 15px;
+}
+
+.testimonial-item .testimonial-rating i {
+    color: #FFD700;
+    font-size: 16px;
+}
+
+.testimonial-item p {
+    font-size: 15px;
+    color: var(--text-color);
+    line-height: 1.7;
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+.testimonial-item .testimonial-author {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.testimonial-item .testimonial-author h4 {
+    font-size: 16px;
+    color: var(--secondary-color);
+    font-weight: 600;
+}
+
+.testimonial-item .testimonial-author span {
+    font-size: 13px;
+    color: var(--text-light);
 }
 
 .testimonials-grid {
@@ -1056,12 +1233,14 @@ img {
 .cta-content h2 {
     font-size: 42px;
     margin-bottom: 20px;
+    color: var(--accent-color);
 }
 
 .cta-content p {
-    font-size: 18px;
+    font-size: 20px;
     margin-bottom: 35px;
-    opacity: 0.9;
+    opacity: 1;
+    font-weight: 500;
 }
 
 .cta-buttons {
@@ -1098,8 +1277,11 @@ img {
 }
 
 .contact-info > p {
-    color: var(--text-light);
+    color: var(--secondary-color);
     margin-bottom: 40px;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.7;
 }
 
 .contact-details {
@@ -1162,7 +1344,8 @@ img {
 .contact-form-wrapper {
     background: var(--light-color);
     padding: 50px;
-    border-radius: var(--border-radius);
+    border-radius: 2px;
+    border: 3px solid #b22234;
 }
 
 .contact-form .form-group {
@@ -1560,25 +1743,27 @@ img {
 
 .product-categories {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     gap: 15px;
 }
 
 .products-header-wrapper {
     display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     margin-bottom: 50px;
-    gap: 200px;
+    gap: 30px;
 }
 
 .products-section-header {
-    text-align: left;
+    text-align: center;
     margin-bottom: 0;
 }
 
 .products-section-header .section-subtitle {
-    margin: 0;
+    margin: 0 auto;
 }
 
 .category-btn {
@@ -1718,9 +1903,22 @@ img {
 }
 
 /* ===== WHY CHOOSE US SECTION ===== */
+/* Industries We Serve section green background */
+.industries-section .section-title,
+.industries-section .section-subtitle {
+    color: #fff;
+}
+.industries-section {
+    background: var(--primary-green);
+}
+/* Make section title and subtitle white in Why Choose Us section */
+.why-choose-us .section-title,
+.why-choose-us .section-subtitle {
+    color: #fff;
+}
 .why-choose-us {
     padding: 120px 0;
-    background: var(--light-color);
+    background: var(--primary-green);
 }
 
 .advantages-grid {
@@ -1730,7 +1928,7 @@ img {
 }
 
 .advantage-card {
-    background: var(--white);
+    background: var(--primary-green);
     padding: 40px 30px;
     border-radius: var(--border-radius);
     text-align: center;
@@ -1743,6 +1941,25 @@ img {
     transform: translateY(-5px);
     box-shadow: var(--shadow-lg);
     border-bottom-color: var(--primary-color);
+}
+
+.advantage-image {
+    width: 100%;
+    height: 180px;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.advantage-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.advantage-card:hover .advantage-image img {
+    transform: scale(1.05);
 }
 
 .advantage-icon {

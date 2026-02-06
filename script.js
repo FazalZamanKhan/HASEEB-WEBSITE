@@ -393,31 +393,161 @@ const initServicesCarousel = () => {
     if (!carousel || !prevBtn || !nextBtn) return;
     
     const cards = carousel.querySelectorAll('.service-card');
-    const cardWidth = cards[0].offsetWidth + 30; // width + gap
-    let currentPosition = 0;
+    if (cards.length === 0) return;
+    
+    let currentIndex = 0;
     const visibleCards = 3;
-    const maxPosition = (cards.length - visibleCards) * cardWidth;
+    const totalCards = cards.length;
+    const maxIndex = totalCards - visibleCards;
+    const gap = 20; // gap between cards in pixels
     
     const updateCarousel = () => {
-        carousel.style.transform = `translateX(-${currentPosition}px)`;
+        // Get the actual card width
+        const card = cards[0];
+        const cardWidth = card.offsetWidth;
+        const moveAmount = currentIndex * (cardWidth + gap);
+        carousel.style.transform = `translateX(-${moveAmount}px)`;
+        
+        // Update button visibility
+        prevBtn.style.opacity = currentIndex === 0 ? '0.5' : '1';
+        prevBtn.style.cursor = currentIndex === 0 ? 'default' : 'pointer';
+        nextBtn.style.opacity = currentIndex >= maxIndex ? '0.5' : '1';
+        nextBtn.style.cursor = currentIndex >= maxIndex ? 'default' : 'pointer';
     };
     
     prevBtn.addEventListener('click', () => {
-        currentPosition = Math.max(0, currentPosition - cardWidth);
-        updateCarousel();
+        if (currentIndex > 0) {
+            currentIndex--;
+            updateCarousel();
+        }
     });
     
     nextBtn.addEventListener('click', () => {
-        currentPosition = Math.min(maxPosition, currentPosition + cardWidth);
+        if (currentIndex < maxIndex) {
+            currentIndex++;
+            updateCarousel();
+        }
+    });
+    
+    // Handle resize
+    window.addEventListener('resize', () => {
         updateCarousel();
     });
     
-    // Add smooth transition
-    carousel.style.transition = 'transform 0.5s ease';
+    // Initial state
+    updateCarousel();
 };
 
-// Initialize carousel after DOM loads
-document.addEventListener('DOMContentLoaded', initServicesCarousel);
-window.addEventListener('resize', initServicesCarousel);
+// ===== ADVANTAGES CAROUSEL =====
+const initAdvantagesCarousel = () => {
+    const carousel = document.getElementById('advantagesCarousel');
+    const prevBtn = document.getElementById('advantagesPrev');
+    const nextBtn = document.getElementById('advantagesNext');
+    
+    if (!carousel || !prevBtn || !nextBtn) return;
+    
+    const cards = carousel.querySelectorAll('.service-card');
+    if (cards.length === 0) return;
+    
+    let currentIndex = 0;
+    const visibleCards = 3;
+    const totalCards = cards.length;
+    const maxIndex = totalCards - visibleCards;
+    const gap = 20;
+    
+    const updateCarousel = () => {
+        const card = cards[0];
+        const cardWidth = card.offsetWidth;
+        const moveAmount = currentIndex * (cardWidth + gap);
+        carousel.style.transform = `translateX(-${moveAmount}px)`;
+        
+        prevBtn.style.opacity = currentIndex === 0 ? '0.5' : '1';
+        prevBtn.style.cursor = currentIndex === 0 ? 'default' : 'pointer';
+        nextBtn.style.opacity = currentIndex >= maxIndex ? '0.5' : '1';
+        nextBtn.style.cursor = currentIndex >= maxIndex ? 'default' : 'pointer';
+    };
+    
+    prevBtn.addEventListener('click', () => {
+        if (currentIndex > 0) {
+            currentIndex--;
+            updateCarousel();
+        }
+    });
+    
+    nextBtn.addEventListener('click', () => {
+        if (currentIndex < maxIndex) {
+            currentIndex++;
+            updateCarousel();
+        }
+    });
+    
+    window.addEventListener('resize', () => {
+        updateCarousel();
+    });
+    
+    updateCarousel();
+};
+
+// ===== INDUSTRIES CAROUSEL =====
+const initIndustriesCarousel = () => {
+    const carousel = document.getElementById('industriesCarousel');
+    const prevBtn = document.getElementById('industriesPrev');
+    const nextBtn = document.getElementById('industriesNext');
+    
+    if (!carousel || !prevBtn || !nextBtn) return;
+    
+    const cards = carousel.querySelectorAll('.service-card');
+    if (cards.length === 0) return;
+    
+    let currentIndex = 0;
+    const visibleCards = 3;
+    const totalCards = cards.length;
+    const maxIndex = totalCards - visibleCards;
+    const gap = 20;
+    
+    const updateCarousel = () => {
+        const card = cards[0];
+        const cardWidth = card.offsetWidth;
+        const moveAmount = currentIndex * (cardWidth + gap);
+        carousel.style.transform = `translateX(-${moveAmount}px)`;
+        
+        prevBtn.style.opacity = currentIndex === 0 ? '0.5' : '1';
+        prevBtn.style.cursor = currentIndex === 0 ? 'default' : 'pointer';
+        nextBtn.style.opacity = currentIndex >= maxIndex ? '0.5' : '1';
+        nextBtn.style.cursor = currentIndex >= maxIndex ? 'default' : 'pointer';
+    };
+    
+    prevBtn.addEventListener('click', () => {
+        if (currentIndex > 0) {
+            currentIndex--;
+            updateCarousel();
+        }
+    });
+    
+    nextBtn.addEventListener('click', () => {
+        if (currentIndex < maxIndex) {
+            currentIndex++;
+            updateCarousel();
+        }
+    });
+    
+    window.addEventListener('resize', () => {
+        updateCarousel();
+    });
+    
+    updateCarousel();
+};
+
+// Initialize carousels after DOM loads
+document.addEventListener('DOMContentLoaded', () => {
+    initServicesCarousel();
+    initAdvantagesCarousel();
+    initIndustriesCarousel();
+});
+window.addEventListener('resize', () => {
+    initServicesCarousel();
+    initAdvantagesCarousel();
+    initIndustriesCarousel();
+});
 
 console.log('HASEEB CABLES Website loaded successfully!');
