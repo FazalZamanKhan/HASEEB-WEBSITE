@@ -538,16 +538,18 @@ const initIndustriesCarousel = () => {
     updateCarousel();
 };
 
-// Initialize carousels after DOM loads
+
+let servicesCarouselUpdater, advantagesCarouselUpdater, industriesCarouselUpdater;
 document.addEventListener('DOMContentLoaded', () => {
-    initServicesCarousel();
-    initAdvantagesCarousel();
-    initIndustriesCarousel();
+    servicesCarouselUpdater = initServicesCarousel();
+    advantagesCarouselUpdater = initAdvantagesCarousel();
+    industriesCarouselUpdater = initIndustriesCarousel();
 });
+
 window.addEventListener('resize', () => {
-    initServicesCarousel();
-    initAdvantagesCarousel();
-    initIndustriesCarousel();
+    if (typeof servicesCarouselUpdater === 'function') servicesCarouselUpdater();
+    if (typeof advantagesCarouselUpdater === 'function') advantagesCarouselUpdater();
+    if (typeof industriesCarouselUpdater === 'function') industriesCarouselUpdater();
 });
 
 console.log('HASEEB CABLES Website loaded successfully!');

@@ -1,3 +1,16 @@
+body.dark-mode .testimonial-item {
+    color: #111 !important;
+    background: #fff !important;
+}
+body.dark-mode .testimonial-item p {
+    color: #111 !important;
+}
+body.dark-mode .testimonial-item .testimonial-author span {
+    color: #111 !important;
+}
+body.dark-mode .industries {
+    background-color: var(--primary-green) !important;
+}
 .footer, .footer a, .footer p, .footer h2, .footer h3, .footer h4, .footer h5, .footer h6,
 .footer .footer-links a,
 .footer .footer-contact span,
@@ -27,10 +40,7 @@
 .nav-links h6,
 .about-content .section-title,
 .about-content .section-title,
-    color: var(--primary-green);
-    font-weight: 700;
-    filter: none;
-}
+{}
 .footer .footer-subscribe input {
     background: #fff;
     color: #222;
@@ -126,13 +136,28 @@ body.dark-mode {
 body.dark-mode .about,
 body.dark-mode .products,
 body.dark-mode .contact {
-    background-color: #121212;
+    background-color: #0D0D0D !important;
+}
+
+body.dark-mode .about {
+    background-color: #0D0D0D !important;
+}
+
+body.dark-mode .products {
+    background-color: var(--primary-green) !important;
 }
 
 body.dark-mode .services,
-body.dark-mode .testimonials,
 body.dark-mode .why-choose-us {
-    background-color: #1A1A1A;
+    background-color: var(--primary-green) !important;
+}
+
+body.dark-mode .testimonials {
+    background-color: #0D0D0D !important;
+}
+
+body.dark-mode .services {
+    background-color: var(--primary-green) !important;
 }
 
 body.dark-mode .section-title {
@@ -151,6 +176,10 @@ body.dark-mode .contact-info > p {
 body.dark-mode .service-card,
 body.dark-mode .testimonial-card,
 body.dark-mode .advantage-card {
+body.dark-mode .testimonials {
+    background-color: #0D0D0D !important;
+    /* Force dark black background for testimonials section in dark mode */
+}
     background-color: #1E1E1E;
     border-color: #333;
 }
@@ -170,7 +199,7 @@ body.dark-mode .about-image img {
 }
 
 body.dark-mode .contact-form-wrapper {
-    background-color: #1E1E1E;
+    background-color: #0D0D0D !important;
 }
 
 body.dark-mode .contact-form input,
@@ -395,11 +424,11 @@ img {
 }
 
 .header.scrolled .logo h1 {
-    color: var(--secondary-color);
+    color: var(--primary-color) !important;
 }
 
 .header.scrolled .logo h1 span {
-    color: var(--primary-color);
+    color: var(--accent-color) !important;
 }
 
 .header.scrolled .nav-links a {
@@ -430,10 +459,12 @@ img {
     font-weight: 800;
     color: var(--primary-color);
     letter-spacing: 2px;
+    /* Ensure HASEEB is always green */
 }
 
 .logo h1 span {
     color: var(--accent-color);
+    /* Ensure CABLES is always yellow */
 }
 
 .logo {
@@ -443,7 +474,7 @@ img {
 }
 
 .logo-img {
-    height: 70px;
+    height: 100px;
     width: auto;
     border-radius: 5px;
 }
@@ -1424,7 +1455,7 @@ img {
 }
 
 .footer-logo-img {
-    height: 50px;
+    height: 80px;
     width: auto;
     border-radius: 5px;
 }
@@ -1766,6 +1797,10 @@ img {
     margin: 0 auto;
 }
 
+body.dark-mode .products-section-header .section-subtitle {
+    color: var(--white) !important;
+}
+
 .category-btn {
     padding: 12px 28px;
     font-family: 'Montserrat', sans-serif;
@@ -1773,9 +1808,9 @@ img {
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1px;
-    border: 2px solid var(--primary-color);
-    background: transparent;
-    color: var(--primary-color);
+    border: 2px solid var(--primary-green);
+    background: #000;
+    color: var(--primary-green);
     border-radius: 50px;
     cursor: pointer;
     transition: var(--transition);
@@ -1783,10 +1818,21 @@ img {
 
 .category-btn:hover,
 .category-btn.active {
-    background: var(--primary-color);
-    color: var(--white);
+    background: #111;
+    color: var(--primary-green);
 }
 
+body.dark-mode .category-btn {
+    background: #000 !important;
+    color: var(--white) !important;
+    border-color: var(--primary-green) !important;
+}
+
+body.dark-mode .category-btn:hover,
+body.dark-mode .category-btn.active {
+    background: #111 !important;
+    color: var(--white) !important;
+}
 .products-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
