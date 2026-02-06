@@ -11,6 +11,15 @@ body.dark-mode .testimonial-item .testimonial-author span {
 body.dark-mode .industries {
     background-color: var(--primary-green) !important;
 }
+
+/* Force green footer in all modes */
+.footer {
+    background: var(--primary-green) !important;
+}
+body.dark-mode .footer {
+    background: var(--primary-green) !important;
+}
+}
 .footer, .footer a, .footer p, .footer h2, .footer h3, .footer h4, .footer h5, .footer h6,
 .footer .footer-links a,
 .footer .footer-contact span,
@@ -387,13 +396,13 @@ img {
 .section-title {
     font-size: 42px;
     font-weight: 800;
-    color: var(--primary-color);
+    color: #fff !important;
     margin-bottom: 20px;
 }
 
 .section-subtitle {
     font-size: 20px;
-    color: var(--secondary-color);
+    color: #fff !important;
     max-width: 650px;
     font-weight: 500;
 }
@@ -416,6 +425,8 @@ img {
     z-index: 1000;
     background: transparent;
     transition: var(--transition);
+    height: 80px;
+    overflow: visible;
 }
 
 .header.scrolled {
@@ -449,7 +460,7 @@ img {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 15px 30px;
+    padding: 5px 30px 0 30px;
     max-width: 100%;
     margin: 0 auto;
 }
@@ -471,18 +482,23 @@ img {
     display: flex;
     align-items: center;
     gap: 12px;
+    margin-top: -6px;
 }
 
 .logo-img {
     height: 100px;
     width: auto;
     border-radius: 5px;
+    margin-top: -10px;
+    margin-bottom: -10px;
+    max-height: 120px;
 }
 
 .nav-links {
     display: flex;
     align-items: center;
     gap: 35px;
+    margin-top: -4px;
 }
 
 .nav-links a {
@@ -524,6 +540,7 @@ img {
     display: flex;
     align-items: center;
     gap: 15px;
+    margin-top: -4px;
 }
 
 .nav-cta .btn-primary {
@@ -1424,8 +1441,11 @@ img {
 
 /* ===== FOOTER ===== */
 .footer {
-    background: var(--dark-color);
-    padding: 80px 0 0;
+    background: var(--primary-green) !important;
+    padding: 40px 0 0;
+    min-height: 250px;
+    height: auto;
+    overflow: visible;
 }
 
 .footer-grid {
@@ -1434,6 +1454,7 @@ img {
     gap: 50px;
     padding-bottom: 60px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    background: transparent !important;
 }
 
 .footer-logo {
@@ -1458,6 +1479,9 @@ img {
     height: 80px;
     width: auto;
     border-radius: 5px;
+    margin-top: -10px;
+    margin-bottom: -10px;
+    max-height: 100px;
 }
 
 .footer-contact-quick {
@@ -1545,20 +1569,27 @@ img {
     justify-content: space-between;
     align-items: center;
     padding: 25px 0;
+    background: var(--primary-green) !important;
+    color: #fff !important;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    box-sizing: border-box;
+    border: none !important;
 }
 
 .footer-bottom p {
-    color: var(--gray-300);
+    color: #fff !important;
     font-size: 14px;
 }
 
 .footer-bottom-links {
     display: flex;
     gap: 30px;
+    background: transparent !important;
 }
 
 .footer-bottom-links a {
-    color: var(--gray-300);
+    color: #fff !important;
     font-size: 14px;
 }
 
@@ -1769,7 +1800,8 @@ img {
 /* ===== PRODUCTS SECTION ===== */
 .products {
     padding: 120px 0;
-    background: var(--white);
+    background: var(--primary-green);
+    color: #fff;
 }
 
 .product-categories {
@@ -1809,7 +1841,7 @@ body.dark-mode .products-section-header .section-subtitle {
     text-transform: uppercase;
     letter-spacing: 1px;
     border: 2px solid var(--primary-green);
-    background: #000;
+    background: #fff;
     color: var(--primary-green);
     border-radius: 50px;
     cursor: pointer;
@@ -1818,8 +1850,8 @@ body.dark-mode .products-section-header .section-subtitle {
 
 .category-btn:hover,
 .category-btn.active {
-    background: #111;
-    color: var(--primary-green);
+    background: var(--primary-green);
+    color: #fff;
 }
 
 body.dark-mode .category-btn {
@@ -1846,6 +1878,8 @@ body.dark-mode .category-btn.active {
     box-shadow: var(--shadow-sm);
     transition: var(--transition);
     height: 400px;
+    background: var(--primary-green);
+    color: #fff;
 }
 
 .product-card:hover {
@@ -2036,6 +2070,15 @@ body.dark-mode .category-btn.active {
 }
 
 /* Products Section Responsive */
+
+/* Force all footer text to bright white in both modes */
+.footer, .footer * {
+    color: #fff !important;
+}
+body.dark-mode .product-card {
+    background: #111 !important;
+    color: var(--white) !important;
+}
 @media (max-width: 1200px) {
     .products-grid {
         grid-template-columns: repeat(3, 1fr);
