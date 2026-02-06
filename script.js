@@ -384,4 +384,40 @@ const createWhatsAppButton = () => {
 
 createWhatsAppButton();
 
+// ===== SERVICES CAROUSEL =====
+const initServicesCarousel = () => {
+    const carousel = document.getElementById('servicesCarousel');
+    const prevBtn = document.getElementById('servicesPrev');
+    const nextBtn = document.getElementById('servicesNext');
+    
+    if (!carousel || !prevBtn || !nextBtn) return;
+    
+    const cards = carousel.querySelectorAll('.service-card');
+    const cardWidth = cards[0].offsetWidth + 30; // width + gap
+    let currentPosition = 0;
+    const visibleCards = 3;
+    const maxPosition = (cards.length - visibleCards) * cardWidth;
+    
+    const updateCarousel = () => {
+        carousel.style.transform = `translateX(-${currentPosition}px)`;
+    };
+    
+    prevBtn.addEventListener('click', () => {
+        currentPosition = Math.max(0, currentPosition - cardWidth);
+        updateCarousel();
+    });
+    
+    nextBtn.addEventListener('click', () => {
+        currentPosition = Math.min(maxPosition, currentPosition + cardWidth);
+        updateCarousel();
+    });
+    
+    // Add smooth transition
+    carousel.style.transition = 'transform 0.5s ease';
+};
+
+// Initialize carousel after DOM loads
+document.addEventListener('DOMContentLoaded', initServicesCarousel);
+window.addEventListener('resize', initServicesCarousel);
+
 console.log('HASEEB CABLES Website loaded successfully!');
