@@ -59,9 +59,9 @@ body.dark-mode .mission-vision {
 }
 .mission-block .section-title, .vision-block .section-title {
     font-size: 36px;
-    font-weight: 600;
+    font-weight: 800; /* match About title weight */
     color: #fff;
-    margin-bottom: 12px;
+    margin-bottom: 20px; /* match .section-title spacing */
 }
 .mission-block .about-text, .vision-block .about-text {
     color: #fff;
@@ -499,10 +499,10 @@ img {
 }
 
 .section-subtitle {
-    font-size: 20px;
+    font-size: 22px;
     color: #fff !important;
-    max-width: 650px;
-    font-weight: 500;
+    max-width: 700px;
+    font-weight: 600;
 }
 
 .section-header {
@@ -569,6 +569,9 @@ img {
     color: var(--primary-color);
     letter-spacing: 2px;
     /* Ensure HASEEB is always green */
+    display: inline-block;
+    transform-origin: left center;
+    transform: scale(1.25); /* visually larger without affecting header layout */
 }
 
 .logo h1 span {
@@ -590,6 +593,14 @@ img {
     margin-top: -10px;
     margin-bottom: -10px;
     max-height: 120px;
+    transform-origin: left center;
+    transform: scale(1.12); /* visually enlarge logo without changing layout height */
+}
+
+@media (max-width: 768px) {
+    .logo h1, .logo-img {
+        transform: none; /* don't scale on small screens */
+    }
 }
 
 .nav-links {
@@ -768,10 +779,11 @@ img {
 }
 
 .stats-section .stat-item p {
-    font-size: 18px;
+    font-size: 20px;
     color: var(--white);
     text-transform: uppercase;
     letter-spacing: 2px;
+    font-weight: 700;
 }
 
 .stat-item {
@@ -787,11 +799,11 @@ img {
 }
 
 .stat-item p {
-    font-size: 16px;
+    font-size: 18px;
     color: #ffffff;
     text-transform: uppercase;
     letter-spacing: 1px;
-    font-weight: 500;
+    font-weight: 700;
 }
 
 /* ===== ABOUT SECTION ===== */
@@ -850,8 +862,8 @@ img {
 .about-text {
     color: #1a1a1a;
     margin-bottom: 30px;
-    font-size: 18px;
-    font-weight: 400;
+    font-size: 20px;
+    font-weight: 600;
     line-height: 1.8;
 }
 
@@ -1107,9 +1119,9 @@ img {
 
 .step-content p {
     color: #ffffff;
-    font-size: 17px;
-    line-height: 1.8;
-    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.9;
+    font-weight: 600;
 }
 
 .process-cta {
@@ -1383,10 +1395,10 @@ img {
 }
 
 .cta-content p {
-    font-size: 20px;
+    font-size: 22px;
     margin-bottom: 35px;
     opacity: 1;
-    font-weight: 500;
+    font-weight: 600;
 }
 
 .cta-buttons {
@@ -1907,6 +1919,8 @@ img {
     flex-direction: row;
     flex-wrap: wrap;
     gap: 15px;
+    justify-content: center;
+    margin-top: 18px;
 }
 
 .products-header-wrapper {
@@ -2225,4 +2239,55 @@ body.dark-mode .product-card {
         padding: 8px 16px;
         font-size: 11px;
     }
+}
+
+/* Force specific section titles to white */
+#products .section-title,
+#process .section-title,
+#services .section-title,
+#whychoose .section-title,
+#industries .section-title {
+    color: #ffffff !important;
+}
+
+/* Also ensure subtitles in those sections are white where applicable */
+#products .section-subtitle,
+#process .section-subtitle,
+#services .section-subtitle,
+#whychoose .section-subtitle,
+#industries .section-subtitle {
+    color: #ffffff !important;
+}
+
+/* Extra high-specificity selectors for section headers (targets the exact markup seen in HTML) */
+#products .section-header .section-title,
+#process .section-header .section-title,
+#services .section-header .section-title,
+#whychoose .section-header .section-title,
+#industries .section-header .section-title {
+    color: #ffffff !important;
+}
+
+/* Fallback: target h2 elements directly under those sections */
+#products h2.section-title,
+#process h2.section-title,
+#services h2.section-title,
+#whychoose h2.section-title,
+#industries h2.section-title {
+    color: #ffffff !important;
+}
+
+/* Light-mode: make specific headings green without affecting dark mode */
+body:not(.dark-mode) #about .about-content .section-title,
+body:not(.dark-mode) #process .section-title,
+body:not(.dark-mode) .testimonials .section-title,
+body:not(.dark-mode) #contact .section-title {
+    color: var(--primary-color) !important;
+}
+
+/* Ensure Mission & Vision headings are white regardless of other overrides */
+#about .mission-vision .mission-block .section-title,
+#about .mission-vision .vision-block .section-title,
+#about .mission-vision h2.section-title {
+    color: #ffffff !important;
 }
