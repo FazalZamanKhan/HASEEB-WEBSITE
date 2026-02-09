@@ -2291,3 +2291,18 @@ body:not(.dark-mode) #contact .section-title {
 #about .mission-vision h2.section-title {
     color: #ffffff !important;
 }
+
+/* Make the Process section subtitle a bit larger and bolder */
+#process .section-subtitle {
+    font-size: 24px !important;
+    font-weight: 700 !important;
+    max-width: 800px !important;
+}
+
+/* Dark-mode: make specific main section headings green */
+body.dark-mode #about .about-content .section-title,
+body.dark-mode #process .section-title,
+body.dark-mode .testimonials .section-title,
+body.dark-mode #contact .section-title {
+    color: var(--primary-color) !important;
+}
