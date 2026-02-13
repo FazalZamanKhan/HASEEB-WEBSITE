@@ -58,13 +58,16 @@ body.dark-mode .mission-vision {
     text-transform: uppercase;
 }
 .mission-block .section-title, .vision-block .section-title {
-    font-size: 36px;
+    font-size: 28px;
     font-weight: 800; /* match About title weight */
     color: #fff;
     margin-bottom: 20px; /* match .section-title spacing */
 }
 .mission-block .about-text, .vision-block .about-text {
     color: #fff;
+    font-size: 19px;
+    font-weight: 600;
+    line-height: 1.6;
 }
 
 /* Make first box larger and second smaller */
@@ -94,6 +97,9 @@ body.dark-mode .mission-vision {
         max-width: 100%;
         min-width: 0;
         padding: 32px 12px;
+    }
+    .mission-block .about-text, .vision-block .about-text {
+        font-size: 18px;
     }
 }
 body.dark-mode .testimonial-item {
@@ -205,6 +211,19 @@ body {
     background-color: var(--white);
     overflow-x: hidden;
     transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Keep section subtitles on a single line with graceful truncation on small widths */
+.section-subtitle {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@media (max-width: 700px) {
+    .section-subtitle {
+        white-space: normal;
+    }
 }
 
 /* ===== DARK MODE TOGGLE BUTTON ===== */
@@ -1945,6 +1964,23 @@ body.dark-mode .products-section-header .section-subtitle {
     color: var(--white) !important;
 }
 
+/* Allow longer subtitles to span wider horizontally for Products and Industries */
+.products-section-header .section-subtitle,
+.industries-section .section-header .section-subtitle {
+    max-width: 1200px;
+    white-space: nowrap;
+    overflow: visible;
+    text-overflow: clip;
+}
+
+@media (max-width: 1100px) {
+    .products-section-header .section-subtitle,
+    .industries-section .section-header .section-subtitle {
+        max-width: 100%;
+        white-space: normal;
+    }
+}
+
 .category-btn {
     padding: 12px 28px;
     font-family: 'Montserrat', sans-serif;
@@ -2302,6 +2338,62 @@ body:not(.dark-mode) #contact .section-title {
 /* Dark-mode: make specific main section headings green */
 body.dark-mode #about .about-content .section-title,
 body.dark-mode #process .section-title,
+/* ===== Contact form submission modal (professional styling) ===== */
+.submit-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+}
+.submit-modal {
+    background: #fff;
+    color: #111;
+    width: 680px;
+    max-width: calc(100% - 40px);
+    border-radius: 12px;
+    padding: 28px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    font-family: 'Open Sans', sans-serif;
+}
+.submit-modal h3 {
+    margin: 0 0 12px 0;
+    font-size: 20px;
+    font-weight: 700;
+}
+.submit-modal p {
+    margin: 0 0 18px 0;
+    color: #444;
+}
+.submit-modal .buttons {
+    display: flex;
+    gap: 12px;
+    justify-content: flex-end;
+    margin-top: 8px;
+}
+.btn--secondary {
+    background: transparent;
+    border: 2px solid #e6e6e6;
+    color: #333;
+    padding: 10px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.btn--primary {
+    background: var(--primary-color);
+    color: #fff;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+@media (max-width: 700px) {
+    .submit-modal { padding: 20px; }
+    .submit-modal h3 { font-size: 18px; }
+}
 body.dark-mode .testimonials .section-title,
 body.dark-mode #contact .section-title {
     color: var(--primary-color) !important;
