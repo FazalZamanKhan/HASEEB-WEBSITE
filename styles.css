@@ -333,6 +333,13 @@ body.dark-mode .about-image img {
     border: 2px solid #333;
 }
 
+/* Make mission & vision paragraph text match light-mode brightness in dark mode */
+body.dark-mode .mission-block .about-text,
+body.dark-mode .vision-block .about-text,
+body.dark-mode #about .mission-vision .about-text {
+    color: #ffffff !important;
+}
+
 /* Keep Mission & Vision titles the same size in dark mode as light mode */
 body.dark-mode .mission-block .section-title,
 body.dark-mode .vision-block .section-title,
@@ -1128,6 +1135,24 @@ img {
 
 .process .section-title {
     color: var(--primary-color);
+}
+
+/* Dark-mode: remove any background/strip behind the Process header and keep it green */
+body.dark-mode #process .section-header .section-title,
+body.dark-mode #process h2.section-title,
+body.dark-mode #process .section-title {
+    background: transparent !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    display: block !important;
+    color: var(--primary-color) !important;
+}
+body.dark-mode #process .section-header .section-title::before,
+body.dark-mode #process .section-header .section-title::after,
+body.dark-mode #process .section-title::before,
+body.dark-mode #process .section-title::after {
+    display: none !important;
+    content: none !important;
 }
 
 .process-timeline {
@@ -2084,8 +2109,17 @@ body.dark-mode .category-btn {
 
 body.dark-mode .category-btn:hover,
 body.dark-mode .category-btn.active {
-    background: #111 !important;
-    color: var(--white) !important;
+    background: var(--primary-green) !important;
+    color: #fff !important;
+    border-color: var(--primary-green) !important;
+}
+
+/* also handle focus / active pseudo-states in dark mode */
+body.dark-mode .category-btn:active,
+body.dark-mode .category-btn:focus {
+    background: var(--primary-green) !important;
+    color: #fff !important;
+    border-color: var(--primary-green) !important;
 }
 .products-grid {
     display: grid;
