@@ -2468,6 +2468,9 @@ body:not(.dark-mode) #contact .section-title {
 body.dark-mode #about .about-content .section-title,
 body.dark-mode #process .section-title,
 /* ===== Contact form submission modal (professional styling) ===== */
+.form-message{font-weight:600}
+.form-message.success{color:#1e7e34}
+.form-message.error{color:#dc3545}
 .submit-modal-overlay {
     position: fixed;
     inset: 0;

@@ -172,16 +172,28 @@ if (contactForm) {
         
         // Simple validation
         if (!data.name || !data.email || !data.message) {
-            alert('Please fill in all required fields.');
+            showMessage('Please fill in all required fields.', 'error');
             return;
         }
         
         // Simulate form submission
         const submitBtn = contactForm.querySelector('button[type="submit"]');
         const originalText = submitBtn.textContent;
-        
+
         submitBtn.textContent = 'Sending...';
         submitBtn.disabled = true;
+
+        // message element below the button
+        const messageEl = contactForm.querySelector('#contactMessage');
+        const showMessage = (msg, type = 'success') => {
+            if (!messageEl) return;
+            messageEl.textContent = msg;
+            messageEl.classList.remove('success', 'error');
+            messageEl.classList.add(type === 'error' ? 'error' : 'success');
+            messageEl.style.display = 'block';
+            // auto-hide after 8s for success, keep for error
+            if (type !== 'error') setTimeout(() => { messageEl.style.display = 'none'; }, 8000);
+        };
         
         // Real API call to backend (use relative path so it works when deployed)
         fetch('/api/contact', {
@@ -190,11 +202,11 @@ if (contactForm) {
             body: JSON.stringify(data)
         }).then(async (resp) => {
             if (!resp.ok) throw new Error((await resp.json()).error || 'Request failed');
-            alert('Thank you for your message! We will get back to you soon.');
+            showMessage('Thank you for your message! We will get back to you soon.', 'success');
             contactForm.reset();
         }).catch((err) => {
             console.error(err);
-            alert('Failed to send message. Please try again later.');
+            showMessage('Failed to send message. Please try again later.', 'error');
         }).finally(() => {
             submitBtn.textContent = originalText;
             submitBtn.disabled = false;
