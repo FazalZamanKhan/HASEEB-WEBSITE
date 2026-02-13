@@ -183,8 +183,8 @@ if (contactForm) {
         submitBtn.textContent = 'Sending...';
         submitBtn.disabled = true;
         
-        // Real API call to backend
-        fetch('http://localhost:3000/api/contact', {
+        // Real API call to backend (use relative path so it works when deployed)
+        fetch('/api/contact', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(data)
