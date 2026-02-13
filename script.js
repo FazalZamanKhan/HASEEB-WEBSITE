@@ -345,8 +345,10 @@ createScrollToTop();
 // ===== WHATSAPP FLOATING BUTTON =====
 const createWhatsAppButton = () => {
     const whatsappBtn = document.createElement('a');
-    whatsappBtn.href = 'https://wa.me/919876543210?text=Hello%2C%20I%20am%20interested%20in%20your%20cables.%20Please%20share%20price%20list.';
+    // Match Get In Touch WhatsApp link and open in new tab
+    whatsappBtn.href = 'https://api.whatsapp.com/send?phone=923334106520';
     whatsappBtn.target = '_blank';
+    whatsappBtn.rel = 'noopener';
     whatsappBtn.innerHTML = '<i class="fab fa-whatsapp"></i>';
     whatsappBtn.className = 'whatsapp-float';
     whatsappBtn.title = 'Chat on WhatsApp';
@@ -394,46 +396,63 @@ const initServicesCarousel = () => {
     
     const cards = carousel.querySelectorAll('.service-card');
     if (cards.length === 0) return;
-    
+
     let currentIndex = 0;
-    const visibleCards = 3;
-    const totalCards = cards.length;
-    const maxIndex = totalCards - visibleCards;
     const gap = 20; // gap between cards in pixels
-    
-    const updateCarousel = () => {
-        // Get the actual card width
+    const totalCards = cards.length;
+
+    const computeSizes = () => {
         const card = cards[0];
-        const cardWidth = card.offsetWidth;
+        const cardWidth = (card && card.offsetWidth) ? card.offsetWidth : 1;
+        const containerWidth = carousel.parentElement ? carousel.parentElement.offsetWidth : carousel.offsetWidth;
+        let totalWidth = 0;
+        cards.forEach(c => { totalWidth += c.offsetWidth || 0; });
+        const totalGap = Math.max(0, (totalCards - 1) * gap);
+        totalWidth += totalGap;
+        const maxTranslate = Math.max(0, totalWidth - containerWidth);
+        const visibleCards = Math.max(1, Math.floor(containerWidth / (cardWidth + gap)));
+        const maxIndex = Math.max(0, totalCards - visibleCards);
+        return { cardWidth, containerWidth, totalWidth, maxTranslate, visibleCards, maxIndex };
+    };
+
+    const updateCarousel = () => {
+        const { cardWidth, maxTranslate, maxIndex } = computeSizes();
+        if (currentIndex > maxIndex) currentIndex = maxIndex;
+
         const moveAmount = currentIndex * (cardWidth + gap);
-        carousel.style.transform = `translateX(-${moveAmount}px)`;
-        
-        // Update button visibility
+        const translateX = Math.min(moveAmount, maxTranslate);
+        carousel.style.transform = `translateX(-${translateX}px)`;
+
         prevBtn.style.opacity = currentIndex === 0 ? '0.5' : '1';
         prevBtn.style.cursor = currentIndex === 0 ? 'default' : 'pointer';
         nextBtn.style.opacity = currentIndex >= maxIndex ? '0.5' : '1';
         nextBtn.style.cursor = currentIndex >= maxIndex ? 'default' : 'pointer';
     };
-    
+
     prevBtn.addEventListener('click', () => {
+        const { maxIndex } = computeVisibleAndMax();
         if (currentIndex > 0) {
-            currentIndex--;
+            currentIndex = Math.max(0, currentIndex - 1);
             updateCarousel();
         }
     });
-    
+
     nextBtn.addEventListener('click', () => {
+        const { maxIndex } = computeSizes();
         if (currentIndex < maxIndex) {
-            currentIndex++;
+            currentIndex = Math.min(maxIndex, currentIndex + 1);
+            updateCarousel();
+        } else {
+            // still clamp translate in case of fractional widths
             updateCarousel();
         }
     });
-    
+
     // Handle resize
     window.addEventListener('resize', () => {
         updateCarousel();
     });
-    
+
     // Initial state
     updateCarousel();
 };
@@ -448,43 +467,59 @@ const initAdvantagesCarousel = () => {
     
     const cards = carousel.querySelectorAll('.service-card');
     if (cards.length === 0) return;
-    
+
     let currentIndex = 0;
-    const visibleCards = 3;
-    const totalCards = cards.length;
-    const maxIndex = totalCards - visibleCards;
     const gap = 20;
-    
-    const updateCarousel = () => {
+    const totalCards = cards.length;
+
+    const computeSizes = () => {
         const card = cards[0];
-        const cardWidth = card.offsetWidth;
+        const cardWidth = (card && card.offsetWidth) ? card.offsetWidth : 1;
+        const containerWidth = carousel.parentElement ? carousel.parentElement.offsetWidth : carousel.offsetWidth;
+        let totalWidth = 0;
+        cards.forEach(c => { totalWidth += c.offsetWidth || 0; });
+        const totalGap = Math.max(0, (totalCards - 1) * gap);
+        totalWidth += totalGap;
+        const maxTranslate = Math.max(0, totalWidth - containerWidth);
+        const visibleCards = Math.max(1, Math.floor(containerWidth / (cardWidth + gap)));
+        const maxIndex = Math.max(0, totalCards - visibleCards);
+        return { cardWidth, containerWidth, totalWidth, maxTranslate, visibleCards, maxIndex };
+    };
+
+    const updateCarousel = () => {
+        const { cardWidth, maxTranslate, maxIndex } = computeSizes();
+        if (currentIndex > maxIndex) currentIndex = maxIndex;
         const moveAmount = currentIndex * (cardWidth + gap);
-        carousel.style.transform = `translateX(-${moveAmount}px)`;
-        
+        const translateX = Math.min(moveAmount, maxTranslate);
+        carousel.style.transform = `translateX(-${translateX}px)`;
+
         prevBtn.style.opacity = currentIndex === 0 ? '0.5' : '1';
         prevBtn.style.cursor = currentIndex === 0 ? 'default' : 'pointer';
         nextBtn.style.opacity = currentIndex >= maxIndex ? '0.5' : '1';
         nextBtn.style.cursor = currentIndex >= maxIndex ? 'default' : 'pointer';
     };
-    
+
     prevBtn.addEventListener('click', () => {
         if (currentIndex > 0) {
-            currentIndex--;
+            currentIndex = Math.max(0, currentIndex - 1);
             updateCarousel();
         }
     });
-    
+
     nextBtn.addEventListener('click', () => {
+        const { maxIndex } = computeSizes();
         if (currentIndex < maxIndex) {
-            currentIndex++;
+            currentIndex = Math.min(maxIndex, currentIndex + 1);
+            updateCarousel();
+        } else {
             updateCarousel();
         }
     });
-    
+
     window.addEventListener('resize', () => {
         updateCarousel();
     });
-    
+
     updateCarousel();
 };
 
@@ -498,43 +533,59 @@ const initIndustriesCarousel = () => {
     
     const cards = carousel.querySelectorAll('.service-card');
     if (cards.length === 0) return;
-    
+
     let currentIndex = 0;
-    const visibleCards = 3;
-    const totalCards = cards.length;
-    const maxIndex = totalCards - visibleCards;
     const gap = 20;
-    
-    const updateCarousel = () => {
+    const totalCards = cards.length;
+
+    const computeSizes = () => {
         const card = cards[0];
-        const cardWidth = card.offsetWidth;
+        const cardWidth = (card && card.offsetWidth) ? card.offsetWidth : 1;
+        const containerWidth = carousel.parentElement ? carousel.parentElement.offsetWidth : carousel.offsetWidth;
+        let totalWidth = 0;
+        cards.forEach(c => { totalWidth += c.offsetWidth || 0; });
+        const totalGap = Math.max(0, (totalCards - 1) * gap);
+        totalWidth += totalGap;
+        const maxTranslate = Math.max(0, totalWidth - containerWidth);
+        const visibleCards = Math.max(1, Math.floor(containerWidth / (cardWidth + gap)));
+        const maxIndex = Math.max(0, totalCards - visibleCards);
+        return { cardWidth, containerWidth, totalWidth, maxTranslate, visibleCards, maxIndex };
+    };
+
+    const updateCarousel = () => {
+        const { cardWidth, maxTranslate, maxIndex } = computeSizes();
+        if (currentIndex > maxIndex) currentIndex = maxIndex;
         const moveAmount = currentIndex * (cardWidth + gap);
-        carousel.style.transform = `translateX(-${moveAmount}px)`;
-        
+        const translateX = Math.min(moveAmount, maxTranslate);
+        carousel.style.transform = `translateX(-${translateX}px)`;
+
         prevBtn.style.opacity = currentIndex === 0 ? '0.5' : '1';
         prevBtn.style.cursor = currentIndex === 0 ? 'default' : 'pointer';
         nextBtn.style.opacity = currentIndex >= maxIndex ? '0.5' : '1';
         nextBtn.style.cursor = currentIndex >= maxIndex ? 'default' : 'pointer';
     };
-    
+
     prevBtn.addEventListener('click', () => {
         if (currentIndex > 0) {
-            currentIndex--;
+            currentIndex = Math.max(0, currentIndex - 1);
             updateCarousel();
         }
     });
-    
+
     nextBtn.addEventListener('click', () => {
+        const { maxIndex } = computeSizes();
         if (currentIndex < maxIndex) {
-            currentIndex++;
+            currentIndex = Math.min(maxIndex, currentIndex + 1);
+            updateCarousel();
+        } else {
             updateCarousel();
         }
     });
-    
+
     window.addEventListener('resize', () => {
         updateCarousel();
     });
-    
+
     updateCarousel();
 };
 
@@ -553,3 +604,12 @@ window.addEventListener('resize', () => {
 });
 
 console.log('HASEEB CABLES Website loaded successfully!');
+
+// Ensure all images have native lazy-loading where supported
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('img').forEach(img => {
+        if (!img.hasAttribute('loading')) {
+            img.setAttribute('loading', 'lazy');
+        }
+    });
+});

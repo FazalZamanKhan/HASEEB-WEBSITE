@@ -1020,6 +1020,27 @@ img {
     transform: scale(1.1);
 }
 
+/* Position carousel arrows at the left/right edges of the wrapper */
+.services-carousel-wrapper .carousel-prev,
+.services-carousel-wrapper .carousel-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.services-carousel-wrapper .carousel-prev {
+    left: 24px;
+}
+.services-carousel-wrapper .carousel-next {
+    right: 24px;
+}
+
+@media (max-width: 992px) {
+    .services-carousel-wrapper .carousel-prev,
+    .services-carousel-wrapper .carousel-next {
+        display: none; /* hide arrows on small screens where touch/swipe is used */
+    }
+}
+
 .service-card {
     position: relative;
     flex: 0 0 calc((100% - 50px) / 3);
