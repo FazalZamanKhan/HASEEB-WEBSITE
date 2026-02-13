@@ -85,9 +85,6 @@ body.dark-mode .mission-vision {
     padding-left: 48px;
     padding-right: 48px;
 }
-    font-size: 18px;
-    margin-bottom: 0;
-}
 @media (max-width: 900px) {
     .mission-vision-content {
         flex-direction: column;
@@ -122,7 +119,6 @@ body.dark-mode .industries {
 }
 body.dark-mode .footer {
     background: var(--primary-green) !important;
-}
 }
 .footer, .footer a, .footer p, .footer h2, .footer h3, .footer h4, .footer h5, .footer h6,
 .footer .footer-links a,
@@ -299,6 +295,11 @@ body.dark-mode .contact-info > p {
     color: var(--text-light);
 }
 
+/* Make About paragraph more readable in dark mode */
+body.dark-mode #about .about-text {
+    color: var(--text-color) !important;
+}
+
 body.dark-mode .service-card,
 body.dark-mode .testimonial-card,
 body.dark-mode .advantage-card {
@@ -320,8 +321,46 @@ body.dark-mode .feature-item span {
     color: var(--white);
 }
 
+/* Prevent section titles from overlaying content in dark mode */
+body.dark-mode .section-title {
+    font-size: 42px !important;
+    position: static !important;
+    z-index: auto !important;
+    color: var(--white) !important;
+}
+
 body.dark-mode .about-image img {
     border: 2px solid #333;
+}
+
+/* Keep Mission & Vision titles the same size in dark mode as light mode */
+body.dark-mode .mission-block .section-title,
+body.dark-mode .vision-block .section-title,
+body.dark-mode #about .mission-vision .section-title {
+    font-size: 28px !important;
+    line-height: 1.2 !important;
+}
+
+/* Ensure About section title has no background patch in dark mode */
+body.dark-mode #about .section-header .section-title,
+body.dark-mode .about .section-title,
+body.dark-mode .about-content .section-title {
+    background: transparent !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    display: block !important;
+    width: 100% !important;
+    margin-top: 12px !important;
+    font-size: 36px !important;
+    line-height: 1.2 !important;
+    color: var(--white) !important;
+}
+body.dark-mode #about .section-header .section-title::before,
+body.dark-mode #about .section-header .section-title::after,
+body.dark-mode .about .section-title::before,
+body.dark-mode .about .section-title::after {
+    display: none !important;
+    content: none !important;
 }
 
 body.dark-mode .contact-form-wrapper {
@@ -1700,6 +1739,7 @@ img {
     padding: 25px 0;
     background: var(--primary-green) !important;
     color: #fff !important;
+    position: relative;
     width: 100vw;
     margin-left: calc(-50vw + 50%);
     box-sizing: border-box;
@@ -1715,6 +1755,40 @@ img {
     display: flex;
     gap: 30px;
     background: transparent !important;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 12px;
+    margin: 0;
+}
+
+/* Nudge copyright slightly to the right and privacy/terms slightly left */
+.footer-bottom p {
+    margin-left: 18px; /* move copyright a bit right */
+}
+.footer-bottom-links {
+    margin-right: 0; /* reset previous right margin */
+    margin-left: -18px; /* shift privacy/terms further left */
+}
+
+/* On very small screens stack and center links for readability */
+@media (max-width: 600px) {
+    .footer-bottom {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+        width: 100%;
+        margin-left: 0;
+    }
+    .footer-bottom p, .footer-bottom-links {
+        margin: 0;
+    }
+    .footer-bottom-links {
+        gap: 12px;
+        justify-content: center;
+        position: static;
+        transform: none;
+    }
 }
 
 .footer-bottom-links a {
