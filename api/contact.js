@@ -2,13 +2,8 @@ const nodemailer = require('nodemailer');
 const fs = require('fs');
 const path = require('path');
 
-// Helper: simple validation
-const validateContact = (body) => {
-  const { name, email, message } = body || {};
-  if (!name || !email || !message) return false;
-  const re = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
-  return re.test(email);
-};
+// Use shared validation helper to require name, message and either email or phone
+const { validateContact } = require('../lib/validate');
 
 const loadTemplate = (name) => {
   try {

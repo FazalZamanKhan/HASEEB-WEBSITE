@@ -169,20 +169,6 @@ if (contactForm) {
         // Get form data
         const formData = new FormData(contactForm);
         const data = Object.fromEntries(formData);
-        
-        // Simple validation
-        if (!data.name || !data.email || !data.message) {
-            showMessage('Please fill in all required fields.', 'error');
-            return;
-        }
-        
-        // Simulate form submission
-        const submitBtn = contactForm.querySelector('button[type="submit"]');
-        const originalText = submitBtn.textContent;
-
-        submitBtn.textContent = 'Sending...';
-        submitBtn.disabled = true;
-
         // message element below the button
         const messageEl = contactForm.querySelector('#contactMessage');
         const showMessage = (msg, type = 'success') => {
@@ -191,9 +177,21 @@ if (contactForm) {
             messageEl.classList.remove('success', 'error');
             messageEl.classList.add(type === 'error' ? 'error' : 'success');
             messageEl.style.display = 'block';
-            // auto-hide after 8s for success, keep for error
             if (type !== 'error') setTimeout(() => { messageEl.style.display = 'none'; }, 8000);
         };
+
+        // Simple validation: require name, message, and at least one of email or phone
+        if (!data.name || !data.message || (!data.email && !data.phone)) {
+            showMessage('Please provide your name, message, and at least an email or phone number.', 'error');
+            return;
+        }
+
+        // Simulate form submission
+        const submitBtn = contactForm.querySelector('button[type="submit"]');
+        const originalText = submitBtn.textContent;
+
+        submitBtn.textContent = 'Sending...';
+        submitBtn.disabled = true;
         
         // Real API call to backend (use relative path so it works when deployed)
         fetch('/api/contact', {
@@ -223,11 +221,57 @@ if (newsletterForm) {
         const emailInput = newsletterForm.querySelector('input[type="email"]');
         
         if (emailInput.value) {
-            alert('Thank you for subscribing to our newsletter!');
+            // show small inline confirmation near newsletter (reuse footer area)
+            const note = document.createElement('div');
+            note.className = 'form-message success';
+            note.style.marginTop = '8px';
+            note.textContent = 'Thank you for subscribing to our newsletter!';
+            newsletterForm.appendChild(note);
+            setTimeout(() => note.remove(), 5000);
             emailInput.value = '';
         }
     });
 }
+
+// ===== FOOTER MODALS (Privacy / Terms) =====
+const privacyBtn = document.getElementById('privacyBtn');
+const termsBtn = document.getElementById('termsBtn');
+const privacyModal = document.getElementById('privacyModal');
+const termsModal = document.getElementById('termsModal');
+
+const openModal = (modal) => {
+    if (!modal) return;
+    modal.setAttribute('aria-hidden', 'false');
+    // prevent body scroll
+    document.body.style.overflow = 'hidden';
+};
+
+const closeModal = (modal) => {
+    if (!modal) return;
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+};
+
+// Attach openers
+if (privacyBtn && privacyModal) {
+    privacyBtn.addEventListener('click', (e) => { e.preventDefault(); openModal(privacyModal); });
+}
+if (termsBtn && termsModal) {
+    termsBtn.addEventListener('click', (e) => { e.preventDefault(); openModal(termsModal); });
+}
+
+// Close buttons and overlay
+document.querySelectorAll('.site-modal').forEach(modal => {
+    modal.addEventListener('click', (e) => {
+        if (e.target.matches('[data-close]') || e.target.classList.contains('modal-close')) {
+            closeModal(modal);
+        }
+    });
+    // close on Escape
+    document.addEventListener('keydown', (ev) => {
+        if (ev.key === 'Escape' && modal.getAttribute('aria-hidden') === 'false') closeModal(modal);
+    });
+});
 
 // ===== INTERSECTION OBSERVER FOR ANIMATIONS =====
 const observerOptions = {

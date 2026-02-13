@@ -21,7 +21,7 @@ app.use(cors({ origin: allowedOrigin }));
 
 const limiter = rateLimit({
   windowMs: 60 * 1000,
-  max: 10,
+  max: 5, // limit to 5 requests per minute
   message: { error: 'Too many requests, please try again later.' }
 });
 app.use('/api/', limiter);
@@ -29,14 +29,8 @@ app.use('/api/', limiter);
 // Health check
 app.get('/api/health', (req, res) => res.json({ status: 'ok' }));
 
-// Basic input validation helper
-const validateContact = (body) => {
-  const { name, email, phone, message } = body;
-  if (!name || !email || !message) return false;
-  // simple email regex
-  const re = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
-  return re.test(email);
-};
+// Use shared validation helper
+const { validateContact } = require('./lib/validate');
 
 // Load email templates
 const loadTemplate = (name) => {

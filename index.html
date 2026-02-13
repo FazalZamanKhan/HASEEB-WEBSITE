@@ -1056,6 +1056,7 @@
                         <a href="https://www.facebook.com/p/Haseeb-Cables-61572903410460/" target="_blank" rel="noopener" title="Facebook"><i class="fab fa-facebook-f"></i></a>
                         <a href="https://api.whatsapp.com/send?phone=923334106520" target="_blank" rel="noopener" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
                         <a href="https://www.instagram.com/haseebcables/" target="_blank" rel="noopener" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@haseeb.cables" target="_blank" rel="noopener" title="TikTok"><i class="fab fa-tiktok"></i></a>
                     </div>
                 </div>
                 <div class="contact-form-wrapper">
@@ -1064,10 +1065,10 @@
                             <input type="text" id="name" name="name" placeholder="Your Name / Company Name" required>
                         </div>
                         <div class="form-group">
-                            <input type="email" id="email" name="email" placeholder="Your Email" required>
+                            <input type="email" id="email" name="email" placeholder="Your Email">
                         </div>
                         <div class="form-group">
-                            <input type="tel" id="phone" name="phone" placeholder="Phone / WhatsApp Number" required>
+                            <input type="tel" id="phone" name="phone" placeholder="Phone / WhatsApp Number">
                         </div>
                         <div class="form-group">
                             <select id="service" name="service">
@@ -1140,12 +1141,41 @@
             <div class="footer-bottom">
                 <p>&copy; 2026 Haseeb Cables. All Rights Reserved.</p>
                 <div class="footer-bottom-links">
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms of Service</a>
+                    <a href="#" id="privacyBtn">Privacy Policy</a>
+                    <a href="#" id="termsBtn">Terms of Service</a>
                 </div>
             </div>
         </div>
     </footer>
+
+    <!-- Modals for Privacy Policy and Terms -->
+    <div id="privacyModal" class="site-modal" aria-hidden="true" role="dialog" aria-labelledby="privacyTitle">
+        <div class="modal-overlay" data-close></div>
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close">&times;</button>
+            <h2 id="privacyTitle">Privacy Policy</h2>
+            <div class="modal-body">
+                <p>Last updated: February 2026</p>
+                <p>We respect your privacy. This website collects only the information you choose to provide when contacting us (name, email, phone, message) to respond to inquiries and process orders. We do not sell or share your personal information with third parties except where required for delivery, legal reasons, or with trusted service providers who help operate our site (e.g., email providers).</p>
+                <p>We store contact form submissions for customer service and order fulfilment. You can request to access, correct, or delete your personal data by contacting us at the email address listed in the footer.</p>
+                <p>By using this site you agree to this Privacy Policy. We may update this policy from time to time; changes will be posted here.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="termsModal" class="site-modal" aria-hidden="true" role="dialog" aria-labelledby="termsTitle">
+        <div class="modal-overlay" data-close></div>
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close">&times;</button>
+            <h2 id="termsTitle">Terms of Service</h2>
+            <div class="modal-body">
+                <p>Last updated: February 2026</p>
+                <p>These Terms govern your use of this website. By accessing or using the site you agree to comply with these Terms. Use of the site is at your own risk.</p>
+                <p>All product information on this site is provided for general guidance. Prices, availability, and specifications may change without notice. Orders placed through the contact form are subject to confirmation.</p>
+                <p>Haseeb Cables is not liable for indirect, incidental, or consequential damages arising from use of the site. For any questions about these Terms, please contact us using the details in the footer.</p>
+            </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
