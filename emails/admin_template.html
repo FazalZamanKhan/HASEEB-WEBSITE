@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>New Contact — HASEEB CABLES</title>
+    <style>
+      body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; background:#f6f8fb; color:#0d1f15; margin:0; }
+      .container { max-width:680px; margin:24px auto; background:#fff; border-radius:8px; overflow:hidden; box-shadow:0 8px 30px rgba(14,30,37,0.08);} 
+      .header { background: #2E8B57; padding:18px 24px; color:#fff; display:flex; align-items:center; gap:12px; }
+      .logo { height:36px; }
+      .body { padding:24px; }
+      h1 { margin:0 0 8px; font-size:20px; }
+      p { margin:8px 0; color:#334; }
+      .meta { background:#f1f6f4; padding:12px; border-radius:6px; margin:12px 0; }
+      .meta b { display:inline-block; width:110px; }
+      .message { white-space:pre-wrap; background:#fff8f0; border-left:4px solid #FFD700; padding:12px; border-radius:6px; margin-top:12px; }
+      .footer { background:#fafafa; padding:16px 24px; font-size:13px; color:#666; }
+      .cta { display:inline-block; margin-top:12px; background:#2E8B57; color:#fff; padding:10px 14px; border-radius:6px; text-decoration:none; }
+      @media(max-width:480px){ .container{margin:12px} .header{padding:12px} }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <img class="logo" src="https://raw.githubusercontent.com/your/repo/master/haseeb-logo.png" alt="HASEEB CABLES">
+        <div>
+          <div style="font-weight:700">HASEEB CABLES</div>
+          <div style="font-size:12px;opacity:0.9">New website contact</div>
+        </div>
+      </div>
+      <div class="body">
+        <h1>New Inquiry from {{name}}</h1>
+        <p><strong>Email:</strong> {{email}}</p>
+        <p><strong>Phone:</strong> {{phone}}</p>
+        <div class="meta">
+          <div><b>Service:</b> {{service}}</div>
+          <div><b>Received:</b> {{timestamp}}</div>
+        </div>
+        <div>
+          <div style="font-weight:700">Message:</div>
+          <div class="message">{{message}}</div>
+        </div>
+        <a class="cta" href="mailto:{{email}}">Reply to sender</a>
+      </div>
+      <div class="footer">
+        You are receiving this email because you are listed as an admin for HASEEB CABLES website.
+      </div>
+    </div>
+  </body>
+</html>

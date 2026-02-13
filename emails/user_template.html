@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Thanks for contacting HASEEB CABLES</title>
+    <style>
+      body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; background:#f6f8fb; color:#0d1f15; margin:0; }
+      .container { max-width:680px; margin:24px auto; background:#fff; border-radius:8px; overflow:hidden; box-shadow:0 8px 30px rgba(14,30,37,0.08);} 
+      .header { background: #2E8B57; padding:18px 24px; color:#fff; }
+      .body { padding:24px; }
+      h1 { margin:0 0 8px; font-size:20px; }
+      p { margin:8px 0; color:#334; }
+      .summary { background:#f1f6f4; padding:12px; border-radius:6px; margin:12px 0; }
+      .btn { display:inline-block; margin-top:12px; background:#C41E3A; color:#fff; padding:10px 14px; border-radius:6px; text-decoration:none; }
+      .footer { background:#fafafa; padding:16px 24px; font-size:13px; color:#666; }
+      @media(max-width:480px){ .container{margin:12px} .header{padding:12px} }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div style="font-weight:800">HASEEB CABLES</div>
+      </div>
+      <div class="body">
+        <h1>Thanks, {{name}}!</h1>
+        <p>We've received your message and will reply within 1-2 business days.</p>
+        <div class="summary">
+          <div><strong>Email:</strong> {{email}}</div>
+          <div><strong>Phone:</strong> {{phone}}</div>
+          <div><strong>Service:</strong> {{service}}</div>
+        </div>
+        <div>
+          <strong>Your message:</strong>
+          <div style="white-space:pre-wrap; margin-top:8px;">{{message}}</div>
+        </div>
+        <a class="btn" href="mailto:{{admin_email}}">Contact Support</a>
+      </div>
+      <div class="footer">
+        HASEEB CABLES — Premium Wires & Cables. If you did not contact us, ignore this message.
+      </div>
+    </div>
+  </body>
+</html>

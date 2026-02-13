@@ -183,13 +183,22 @@ if (contactForm) {
         submitBtn.textContent = 'Sending...';
         submitBtn.disabled = true;
         
-        // Simulate API call
-        setTimeout(() => {
+        // Real API call to backend
+        fetch('http://localhost:3000/api/contact', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+        }).then(async (resp) => {
+            if (!resp.ok) throw new Error((await resp.json()).error || 'Request failed');
             alert('Thank you for your message! We will get back to you soon.');
             contactForm.reset();
+        }).catch((err) => {
+            console.error(err);
+            alert('Failed to send message. Please try again later.');
+        }).finally(() => {
             submitBtn.textContent = originalText;
             submitBtn.disabled = false;
-        }, 1500);
+        });
     });
 }
 
