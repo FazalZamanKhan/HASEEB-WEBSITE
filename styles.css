@@ -627,6 +627,7 @@ img {
     max-width: 100%;
     margin: 0 auto;
 }
+.navbar { position: relative; }
 
 .logo h1 {
     font-size: 24px;
@@ -2089,8 +2090,16 @@ body.dark-mode #process .section-title::after {
         min-height: 280px;
     }
 
+    /* Allow hero video on mobile; constrain height for performance */
     .hero-video {
-        display: none; /* hide heavy video on small devices */
+        display: block;
+        width: 100%;
+        height: 55vh;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 0;
     }
 
     .logo-img {
@@ -2724,14 +2733,17 @@ body.dark-mode #contact .section-title {
         flex-direction: column;
         position: fixed;
         top: 66px; /* below header */
-        left: 0;
         right: 0;
+        left: auto;
+        width: 320px;
+        max-width: 82%;
         bottom: 0;
         background: var(--secondary-color);
         padding: 18px 16px 30px;
         gap: 16px;
         overflow-y: auto;
         z-index: 1100;
+        box-shadow: -8px 0 32px rgba(0,0,0,0.5);
     }
     /* show CTA under menu when open */
     .nav-links.active + .nav-cta {
@@ -2822,7 +2834,26 @@ body.dark-mode #contact .section-title {
     .nav-links.active { right: 0; }
 
     /* Transform hamburger into X when active */
-    .hamburger span { background: #fff; }
+    /* make hamburger lines red on mobile */
+    .hamburger span { background: var(--red-color); }
+    /* position hamburger and dark-mode toggle in header */
+    .hamburger { position: absolute; top: 16px; right: 18px; }
+    .dark-mode-toggle {
+        display: flex !important;
+        position: absolute;
+        top: 12px;
+        right: 76px;
+        z-index: 1101;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        align-items: center;
+        justify-content: center;
+        background: transparent;
+        border: 2px solid var(--red-color);
+        color: var(--red-color);
+    }
+    .dark-mode-toggle:hover { background: var(--red-color); color: #fff; }
     .hamburger.active span:nth-child(1) { transform: translateY(9px) rotate(45deg); }
     .hamburger.active span:nth-child(2) { opacity: 0; transform: scaleX(0); }
     .hamburger.active span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }

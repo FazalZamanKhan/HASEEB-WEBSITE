@@ -359,6 +359,28 @@ document.querySelectorAll('.project-card').forEach(card => {
 // ===== PRELOADER (Optional) =====
 window.addEventListener('load', () => {
     document.body.classList.add('loaded');
+    // Attempt to play hero video on mobile/tablet where allowed
+    try {
+        const heroVideo = document.getElementById('heroVideo');
+        if (heroVideo) {
+            // ensure muted and playsinline for autoplay support
+            heroVideo.muted = true;
+            heroVideo.playsInline = true;
+            const playPromise = heroVideo.play();
+            if (playPromise && typeof playPromise.then === 'function') {
+                playPromise.catch((e) => {
+                    // mute and try again if initial autoplay blocked
+                    heroVideo.muted = true;
+                    heroVideo.play().catch(() => {
+                        // silent fail - user can tap to play
+                        console.debug('Hero video autoplay blocked:', e);
+                    });
+                });
+            }
+        }
+    } catch (err) {
+        console.warn('Hero video play attempt failed', err);
+    }
 });
 
 // ===== SCROLL TO TOP FUNCTIONALITY =====
