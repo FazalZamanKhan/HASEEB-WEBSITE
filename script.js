@@ -60,8 +60,17 @@ window.addEventListener('scroll', () => {
 
 // ===== MOBILE NAVIGATION =====
 hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
+    const isActive = hamburger.classList.toggle('active');
     navLinks.classList.toggle('active');
+
+    // prevent page scroll when menu open
+    if (navLinks.classList.contains('active')) {
+        document.body.style.overflow = 'hidden';
+        document.body.classList.add('menu-open');
+    } else {
+        document.body.style.overflow = '';
+        document.body.classList.remove('menu-open');
+    }
 });
 
 // Close mobile nav when clicking a link
@@ -69,6 +78,8 @@ navLinksItems.forEach(item => {
     item.addEventListener('click', () => {
         hamburger.classList.remove('active');
         navLinks.classList.remove('active');
+        document.body.style.overflow = '';
+        document.body.classList.remove('menu-open');
     });
 });
 
@@ -106,18 +117,7 @@ window.addEventListener('scroll', () => {
 });
 
 // ===== MOBILE NAVIGATION =====
-hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    navLinks.classList.toggle('active');
-});
-
-// Close mobile nav when clicking a link
-navLinksItems.forEach(item => {
-    item.addEventListener('click', () => {
-        hamburger.classList.remove('active');
-        navLinks.classList.remove('active');
-    });
-});
+// (Duplicate mobile nav block removed - handled above)
 
 // ===== ACTIVE NAV LINK ON SCROLL =====
 const sections = document.querySelectorAll('section[id]');
@@ -677,4 +677,21 @@ document.addEventListener('DOMContentLoaded', () => {
             img.setAttribute('loading', 'lazy');
         }
     });
+});
+
+// Ensure mobile nav is closed when resizing to desktop widths
+window.addEventListener('resize', () => {
+    try {
+        const hamburgerEl = document.querySelector('.hamburger');
+        const navLinksEl = document.querySelector('.nav-links');
+        if (window.innerWidth > 992) {
+            if (hamburgerEl) hamburgerEl.classList.remove('active');
+            if (navLinksEl) navLinksEl.classList.remove('active');
+            // restore body overflow if a modal/menu was open
+            document.body.style.overflow = '';
+        }
+    } catch (e) {
+        // fail silently
+        console.warn('Resize handler error', e);
+    }
 });
